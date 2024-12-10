@@ -23,13 +23,14 @@ public class PlayerMover : MonoBehaviour
     private void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
-        body.linearVelocity = new Vector2(horizontalInput  * speed, body.linearVelocity.y);
+        body.linearVelocity = new Vector2(horizontalInput * speed, body.linearVelocity.y);
 
         //Flip player when moving left-right
         if(horizontalInput > 0.01f)
         {
             transform.localScale = Vector3.one;
         }
+
         else if(horizontalInput < -0.01f)
         {
             transform.localScale = new Vector3(-1, 1, 1);
@@ -40,8 +41,7 @@ public class PlayerMover : MonoBehaviour
             Jump();
         }
 
-        //Set animator parameters
-        animator.SetBool("run", horizontalInput != 0); 
+        animator.SetBool("run", horizontalInput != 0);//Set animator parameters
     }
 
     private void Jump()
