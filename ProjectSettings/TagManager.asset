@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 3
   tags:
   - Enemy
+  - Ground
+  - Fireball
+  - Waterball
+  - Tornado
+  - AirObstacle
+  - Collectables
   layers:
   - Default
   - TransparentFX
@@ -13,7 +19,7 @@ TagManager:
   - Water
   - UI
   - Player
-  - 
+  - Ground
   - 
   - 
   - 
@@ -50,6 +56,12 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 327758561
+    locked: 0
+  - name: Attacks
+    uniqueID: 3684235231
+    locked: 0
+  - name: Enemy
+    uniqueID: 2906584795
     locked: 0
   m_RenderingLayers:
   - Default
