@@ -235,7 +235,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Waterball_0: -3122085898744274324
+      Waterball_1: 4911195380809476470
+      Waterball_2: -595903334299325764
+      Waterball_3: -6429100284566278023
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
