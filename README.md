@@ -13,8 +13,10 @@
 [קישור לitch.io](https://wnikita.itch.io/elementa-pilot)
 
 ## קישור לדף עם הרכיבים הרשמיים
-https://github.com/UniversityGameProject-2024/Elementa/wiki
+[הרכיבים הרשמיים](https://github.com/UniversityGameProject-2024/Elementa/wiki)
 
+## קישור לדף עם הרכיבים דרמטיים
+[הרכיבים דרמטיים](https://github.com/UniversityGameProject-2024/Elementa/blob/main/dramatic-elements.md)
 ## חברי צוות
 ניקיטה אנוסוב
 
