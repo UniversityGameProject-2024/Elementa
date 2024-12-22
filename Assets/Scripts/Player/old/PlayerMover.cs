@@ -8,7 +8,7 @@ public class PlayerMover : MonoBehaviour
     private float horizontalInput;
 
     [Tooltip("Player Speed")]
-    [SerializeField] private float speed = 5;
+    [SerializeField] private float runSpeed = 5;
 
     [SerializeField] private LayerMask groundLayer;
 
@@ -23,7 +23,7 @@ public class PlayerMover : MonoBehaviour
     private void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
-        body.linearVelocity = new Vector2(horizontalInput * speed, body.linearVelocity.y);
+        body.linearVelocity = new Vector2(horizontalInput * runSpeed, body.linearVelocity.y);
 
         //Flip player when moving left-right
         if (horizontalInput > 0.01f)
@@ -46,7 +46,7 @@ public class PlayerMover : MonoBehaviour
 
     private void Jump()
     {
-        body.linearVelocity = new Vector2(body.linearVelocity.x, speed);
+        body.linearVelocity = new Vector2(body.linearVelocity.x, runSpeed);
     }
 
     private bool IsGround()
