@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerMove : PlayerState
+public class PlayerMove : PlayerOnGround
 {
     public PlayerMove(Player player, StateMachine stateMachine, string animationName) : base(player, stateMachine, animationName)
     {
@@ -20,7 +20,7 @@ public class PlayerMove : PlayerState
     {
         base.Update();
 
-        player.SetRunSpeed(horizontalInput * player.runSpeed, 0);
+        player.SetRunSpeed(horizontalInput * player.runSpeed, body.linearVelocity.y);
 
 
         if (horizontalInput == 0)

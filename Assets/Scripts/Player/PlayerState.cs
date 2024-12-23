@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class PlayerState
 {
+    private string animationName;
     protected Player player;
     protected StateMachine stateMachine;
-    private string animationName;
     protected float horizontalInput;
+    protected Rigidbody2D body;
 
     public PlayerState(Player player, StateMachine stateMachine, string animationName)
     {
@@ -18,12 +19,14 @@ public class PlayerState
     {
         Debug.Log("Player enter -" + animationName);
         player.animator.SetBool(animationName, true);
+        body = player.body; 
     }
 
     public virtual void Update()
     {
         Debug.Log("Player in -" + animationName);
         horizontalInput = player.GetHorizontalInput();
+        player.animator.SetFloat("y_velocity", body.linearVelocity.y);
     }
 
     public virtual void Exit()

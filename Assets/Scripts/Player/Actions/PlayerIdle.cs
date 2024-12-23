@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerIdle : PlayerState
+public class PlayerIdle : PlayerOnGround
 {
     public PlayerIdle(Player player, StateMachine stateMachine, string animationName) : base(player, stateMachine, animationName)
     {
