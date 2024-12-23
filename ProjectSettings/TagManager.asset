@@ -51,8 +51,8 @@ TagManager:
   - name: Background
     uniqueID: 16389639
     locked: 0
-  - name: Plants
-    uniqueID: 1167473775
+  - name: Tree
+    uniqueID: 102092199
     locked: 0
   - name: Tiles
     uniqueID: 3971091499
@@ -65,6 +65,9 @@ TagManager:
     locked: 0
   - name: Enemy
     uniqueID: 2906584795
+    locked: 0
+  - name: Plants
+    uniqueID: 1167473775
     locked: 0
   m_RenderingLayers:
   - Default
