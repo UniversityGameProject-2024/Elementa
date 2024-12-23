@@ -20,7 +20,7 @@ TagManager:
   - UI
   - Player
   - Ground
-  - 
+  - plants
   - 
   - 
   - 
@@ -50,6 +50,9 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 16389639
+    locked: 0
+  - name: Plants
+    uniqueID: 1167473775
     locked: 0
   - name: Tiles
     uniqueID: 3971091499

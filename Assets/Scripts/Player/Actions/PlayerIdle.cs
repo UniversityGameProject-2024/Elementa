@@ -10,6 +10,7 @@ public class PlayerIdle : PlayerOnGround
     public override void Enter()
     {
         base.Enter();
+        player.Stand();
     }
 
     public override void Exit()

@@ -61,8 +61,8 @@ public class Player : MonoBehaviour
     public void SetRunSpeed(float xSpeed, float ySpeed)
     {
         body.linearVelocity = new Vector2(xSpeed, ySpeed);
-        //FlipController(xSpeed);
     }
+    public void Stand() => body.linearVelocity = new Vector2(0, 0);
 
 
     public float GetHorizontalInput()
