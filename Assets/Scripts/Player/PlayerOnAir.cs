@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerOnAir : PlayerState
 {
-    public PlayerOnAir(Player player, StateMachine stateMachine, string animationName) : base(player, stateMachine, animationName)
+    public PlayerOnAir(Player player, StateMachine stateMachine, string animationName, GameObject gameObject) : base(player, stateMachine, animationName, gameObject)
     {
     }
 
@@ -22,6 +22,8 @@ public class PlayerOnAir : PlayerState
 
         if(player.IsGroundDetect())
         {
+            // Stop the player when landing
+            player.Stand();
             stateMachine.ChangeState(player.idleState);
         }
 

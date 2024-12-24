@@ -7,12 +7,14 @@ public class PlayerState
     protected StateMachine stateMachine;
     protected float horizontalInput;
     protected Rigidbody2D body;
+    protected GameObject gameObject;
 
-    public PlayerState(Player player, StateMachine stateMachine, string animationName)
+    public PlayerState(Player player, StateMachine stateMachine, string animationName, GameObject gameObject)
     {
         this.player = player;
         this.stateMachine = stateMachine;
         this.animationName = animationName;
+        this.gameObject = gameObject;
     }
 
     public virtual void Enter()
@@ -31,7 +33,7 @@ public class PlayerState
 
     public virtual void Exit()
     {
-        player.animator.SetBool(animationName, false);
         Debug.Log("Player exit -" + animationName);
+        player.animator.SetBool(animationName, false);
     }
 }

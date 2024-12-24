@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerMove : PlayerOnGround
 {
-    public PlayerMove(Player player, StateMachine stateMachine, string animationName) : base(player, stateMachine, animationName)
+    public PlayerMove(Player player, StateMachine stateMachine, string animationName, GameObject gameObject) : base(player, stateMachine, animationName, gameObject)
     {
     }
 

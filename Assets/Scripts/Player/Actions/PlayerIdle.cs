@@ -2,15 +2,14 @@ using UnityEngine;
 
 public class PlayerIdle : PlayerOnGround
 {
-    public PlayerIdle(Player player, StateMachine stateMachine, string animationName) : base(player, stateMachine, animationName)
+    public PlayerIdle(Player player, StateMachine stateMachine, string animationName, GameObject gameObject) : base(player, stateMachine, animationName, gameObject)
     {
-
     }
 
     public override void Enter()
     {
         base.Enter();
-        player.Stand();
+        //player.Stand();
     }
 
     public override void Exit()

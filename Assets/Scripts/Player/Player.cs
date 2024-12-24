@@ -1,5 +1,7 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class Player : MonoBehaviour
 {
@@ -10,12 +12,16 @@ public class Player : MonoBehaviour
     public PlayerOnGround onGround { get; private set; }
     public PlayerOnAir onAir { get; private set; }
     public PlayerJump jumpState { get; private set; }
+    public Fireball fireball { get; private set; }
+    public Land land { get; private set; }
+    public Air air { get; private set; }
+
+
     #endregion
 
     #region Compnents
     public Animator animator { get; private set; }
     public Rigidbody2D body { get; private set; }
-    public BoxCollider2D boxCollider { get; private set; }
     #endregion
 
     #region SerializeField
@@ -39,14 +45,26 @@ public class Player : MonoBehaviour
     public int viewDirection { get; private set; } = 1;
     private bool rightView = true;
 
+    #region Magic Prefabs
+    [SerializeField] private GameObject fireballPrefab;
+    [SerializeField] public GameObject landPrefab;
+    [SerializeField] public GameObject airPrefab;
+    [SerializeField] public Transform firePoint; // The position from where the fireball spawns
+    [SerializeField] public float fireballSpeed ; // Speed of the fireball
 
-    private void Awake()
+    #endregion
+
+private void Awake()
     {
         stateMachine = new StateMachine();
-        idleState = new PlayerIdle(this, stateMachine, "idle");
-        moveState = new PlayerMove(this, stateMachine, "run");
-        onAir = new PlayerOnAir(this, stateMachine, "jump");
-        jumpState = new PlayerJump(this, stateMachine, "jump");
+        idleState = new PlayerIdle(this, stateMachine, "idle", null);
+        moveState = new PlayerMove(this, stateMachine, "run", null);
+        onAir = new PlayerOnAir(this, stateMachine, "jump", null);
+        jumpState = new PlayerJump(this, stateMachine, "jump", null);
+        fireball = new Fireball(this, stateMachine, "fireball", fireballPrefab);
+        land = new Land(this, stateMachine, "land", landPrefab);
+        air = new Air(this, stateMachine, "air", airPrefab);
+
     }
 
     private void Start()
@@ -54,7 +72,6 @@ public class Player : MonoBehaviour
         //Grab ref for rigidbody and animator from object
         animator = GetComponent<Animator>();
         body = GetComponent<Rigidbody2D>();
-        boxCollider = GetComponent<BoxCollider2D>();
         stateMachine.Initialize(idleState);
     }
 
@@ -83,7 +100,7 @@ public class Player : MonoBehaviour
         Gizmos.DrawLine(groundCheck.position, new Vector2(groundCheck.position.x, groundCheck.position.y - groundDist));
     }
 
-    public bool IsGroundDetect() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundDist, groundLayer);
+    public virtual bool IsGroundDetect() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundDist, groundLayer);
 
     public void FlipPlayer()
     {
@@ -92,16 +109,23 @@ public class Player : MonoBehaviour
         transform.Rotate(0, 180, 0);
     }
 
+
     public void FlipControl()
     {
-        if(body.linearVelocity.x > 0 && !rightView)
+        const float tolerance = 0.1f; // Add a small tolerance to prevent unnecessary flipping
+
+        if (Mathf.Abs(body.linearVelocity.x) > tolerance) // Only flip if velocity exceeds tolerance
         {
-            FlipPlayer();
-        }
-        else if(body.linearVelocity.x < 0 && rightView)
-        {
-            FlipPlayer();
+            if (body.linearVelocity.x > 0 && !rightView)
+            {
+                FlipPlayer();
+            }
+            else if (body.linearVelocity.x < 0 && rightView)
+            {
+                FlipPlayer();
+            }
         }
     }
+
 }
 

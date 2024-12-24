@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerJump : PlayerState
 {
-    public PlayerJump(Player player, StateMachine stateMachine, string animationName) : base(player, stateMachine, animationName)
+    public PlayerJump(Player player, StateMachine stateMachine, string animationName, GameObject gameObject) : base(player, stateMachine, animationName, gameObject)
     {
     }
 

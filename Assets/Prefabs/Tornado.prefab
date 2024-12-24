@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3903241829440524790}
   - component: {fileID: 3169947408348176979}
   - component: {fileID: 92477144193043079}
+  - component: {fileID: 6679592069346992092}
   m_Layer: 0
   m_Name: Tornado
   m_TagString: Tornado
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -323875797
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -1562898330331900178, guid: 6f60c928f195f5944a7adf9353e8e0a0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -97,7 +98,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5564835743888163771}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a6afc1fa14f2a04686428973345b347, type: 3}
   m_Name: 
@@ -176,3 +177,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6679592069346992092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5564835743888163771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23023ae01ffb980468cbca06d1f6d137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
