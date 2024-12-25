@@ -55,7 +55,7 @@ public class Projectile : MonoBehaviour
             {
                 destroyAirSpell();
             }
-                Destroy(gameObject);
+            Destroy(gameObject);
         }
         if (collision.CompareTag("Land"))
         {

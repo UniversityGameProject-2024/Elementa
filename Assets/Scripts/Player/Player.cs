@@ -61,10 +61,11 @@ public class Player : MonoBehaviour
     [SerializeField] public float fireballSpeed; // Speed of the fireball
     [SerializeField] public GameObject landPrefab;
     [SerializeField] public GameObject airPrefab;
-    [SerializeField] public Transform shootPoint; // The position from where the fireball spawns
+    [SerializeField] public Transform shootPoint;// The position from where the fireball spawns
+
     #endregion
 
-private void Awake()
+    private void Awake()
     {
         stateMachine = new StateMachine();
         idleState = new PlayerIdle(this, stateMachine, "idle", null);

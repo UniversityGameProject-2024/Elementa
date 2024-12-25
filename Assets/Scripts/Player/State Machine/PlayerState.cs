@@ -23,7 +23,7 @@ public class PlayerState
 
         player.animator.SetBool(animationName, true);
 
-        body = player.body; 
+        body = player.body;
     }
 
     public virtual void Update()

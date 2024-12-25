@@ -21,7 +21,7 @@ public class PlayerIdle : PlayerOnGround
     {
         base.Update();
 
-        if ( horizontalInput != 0)
+        if (horizontalInput != 0)
         {
             stateMachine.ChangeState(player.moveState);
         }
