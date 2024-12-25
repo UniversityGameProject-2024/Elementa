@@ -20,7 +20,9 @@ public class PlayerState
     public virtual void Enter()
     {
         Debug.Log("Player enter -" + animationName);
+
         player.animator.SetBool(animationName, true);
+
         body = player.body; 
     }
 

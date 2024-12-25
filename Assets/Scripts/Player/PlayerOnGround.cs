@@ -21,7 +21,7 @@ public class PlayerOnGround : PlayerState
     {
         base.Update();
 
-        if(Input.GetKeyDown(player._jumpKey) && player.IsGroundDetect())
+        if (Input.GetKeyDown(player._jumpKey) && player.IsGroundDetect())
         {
             stateMachine.ChangeState(player.jumpState);
         }
@@ -43,7 +43,7 @@ public class PlayerOnGround : PlayerState
 
         if (Input.GetKeyDown(player._airKey))
         {
-            stateMachine.ChangeState(player.air); 
+            stateMachine.ChangeState(player.air);
         }
     }
 }

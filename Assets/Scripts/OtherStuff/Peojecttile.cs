@@ -21,11 +21,7 @@ public class Projectile : MonoBehaviour
         // Check if this is a Tornado projectile
         if (CompareTag("Tornado"))
         {
-            Player player = FindAnyObjectByType<Player>();
-            if (player != null && player.stateMachine.currentState is Air airState)
-            {
-                airState.returnPlayer();
-            }
+            destroyAirSpell();
         }
 
         // Destroy the projectile itself
@@ -45,11 +41,7 @@ public class Projectile : MonoBehaviour
             }
             if (CompareTag("Tornado"))
             {
-                Player player = FindAnyObjectByType<Player>();
-                if (player != null && player.stateMachine.currentState is Air airState)
-                {
-                    airState.returnPlayer();
-                }
+                destroyAirSpell();
 
             }
             // Destroy the projectile itself
@@ -61,12 +53,7 @@ public class Projectile : MonoBehaviour
             // Destroy the projectile itself
             if (CompareTag("Tornado"))
             {
-                Player player = FindAnyObjectByType<Player>();
-                if (player != null && player.stateMachine.currentState is Air airState)
-                {
-                    airState.returnPlayer();
-                }
-
+                destroyAirSpell();
             }
                 Destroy(gameObject);
         }
@@ -83,6 +70,16 @@ public class Projectile : MonoBehaviour
                 // Destroy the projectile itself
                 Destroy(gameObject);
             }
+        }
+    }
+
+
+    private void destroyAirSpell()
+    {
+        Player player = FindAnyObjectByType<Player>();
+        if (player != null && player.stateMachine.currentState is Air airState)
+        {
+            airState.returnPlayer();
         }
     }
 }

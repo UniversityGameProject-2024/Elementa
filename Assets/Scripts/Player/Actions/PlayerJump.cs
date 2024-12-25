@@ -9,7 +9,7 @@ public class PlayerJump : PlayerState
     public override void Enter()
     {
         base.Enter();
-        body.linearVelocity = new Vector2 (body.linearVelocity.x, player.jumpImpulse);
+        body.linearVelocity = new Vector2(body.linearVelocity.x, player.jumpImpulse);
     }
 
     public override void Exit()
@@ -21,7 +21,7 @@ public class PlayerJump : PlayerState
     {
         base.Update();
 
-        if(body.linearVelocity.y < 0)
+        if (body.linearVelocity.y < 0)
         {
             stateMachine.ChangeState(player.onAir);
         }

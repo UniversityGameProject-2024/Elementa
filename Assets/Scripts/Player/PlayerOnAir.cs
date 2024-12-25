@@ -20,14 +20,14 @@ public class PlayerOnAir : PlayerState
     {
         base.Update();
 
-        if(player.IsGroundDetect())
+        if (player.IsGroundDetect())
         {
             // Stop the player when landing
             player.Stand();
             stateMachine.ChangeState(player.idleState);
         }
 
-        if(horizontalInput != 0)
+        if (horizontalInput != 0)
         {
             player.SetRunSpeed(player.runSpeed * horizontalInput, body.linearVelocity.y);
         }
