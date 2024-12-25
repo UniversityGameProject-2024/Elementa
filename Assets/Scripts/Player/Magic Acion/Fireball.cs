@@ -10,7 +10,7 @@ public class Fireball : PlayerState
     {
         base.Enter();
         // Instantiate the fireball at the fire point
-        GameObject fireballInstance = Object.Instantiate(gameObject, player.firePoint.position, Quaternion.identity);
+        GameObject fireballInstance = Object.Instantiate(gameObject, player.shootPoint.position, Quaternion.identity);
 
         // Set the fireball's velocity based on the player's facing direction
         Rigidbody2D fireballRb = fireballInstance.GetComponent<Rigidbody2D>();

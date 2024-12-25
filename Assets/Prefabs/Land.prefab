@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2243350357511596713}
   m_Layer: 7
   m_Name: Land
-  m_TagString: Fireball
+  m_TagString: Land
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -164,7 +164,7 @@ Rigidbody2D:
   m_Mass: 100
   m_LinearDamping: 0
   m_AngularDamping: 0
-  m_GravityScale: 1
+  m_GravityScale: 0.1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2

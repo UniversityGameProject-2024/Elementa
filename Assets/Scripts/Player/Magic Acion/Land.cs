@@ -20,7 +20,7 @@ public class Land : PlayerState
         // Instantiate a new land object at the player's position
         if (gameObject != null)
         {
-            currentLand = Object.Instantiate(gameObject, player.firePoint.position, Quaternion.identity);
+            currentLand = Object.Instantiate(gameObject, player.shootPoint.position, Quaternion.identity);
         }
 
         // Transition back to idle or another state after creating the land object

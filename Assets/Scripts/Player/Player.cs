@@ -25,11 +25,12 @@ public class Player : MonoBehaviour
     #endregion
 
     #region SerializeField
+    [Header("Player Settings")]
     [Tooltip("Player Speed")]
     [SerializeField] public float runSpeed = 5;
 
-    public float jumpImpulse;
-    [SerializeField] private Transform groundCheck;
+    [SerializeField] public float jumpImpulse;
+    [SerializeField] public Transform groundCheck;
     [SerializeField] private float groundDist;
     [SerializeField] private LayerMask groundLayer;
 
@@ -40,18 +41,27 @@ public class Player : MonoBehaviour
     [SerializeField] private KeyCode moveRightKey = KeyCode.RightArrow;
     [Tooltip("Key for jump")]
     [SerializeField] private KeyCode jumpKey = KeyCode.Space;
+    [Tooltip("Key for Shooting a fireball")]
+    [SerializeField] private KeyCode fireballKey = KeyCode.Alpha2;
+    [Tooltip("Key for creating a land tile")]
+    [SerializeField] private KeyCode landTileKey = KeyCode.Alpha3;
+    [Tooltip("Key for a air spell")]
+    [SerializeField] private KeyCode airKey = KeyCode.Alpha4;
     public KeyCode _jumpKey => jumpKey;// Public property to provide read-only access
+    public KeyCode _fireballKey => fireballKey;// Public property to provide read-only access
+    public KeyCode _landTileKey => landTileKey;// Public property to provide read-only access
+    public KeyCode _airKey => airKey;// Public property to provide read-only access
     #endregion
     public int viewDirection { get; private set; } = 1;
     private bool rightView = true;
 
     #region Magic Prefabs
+    [Header("Magic Actions")]
     [SerializeField] private GameObject fireballPrefab;
+    [SerializeField] public float fireballSpeed; // Speed of the fireball
     [SerializeField] public GameObject landPrefab;
     [SerializeField] public GameObject airPrefab;
-    [SerializeField] public Transform firePoint; // The position from where the fireball spawns
-    [SerializeField] public float fireballSpeed ; // Speed of the fireball
-
+    [SerializeField] public Transform shootPoint; // The position from where the fireball spawns
     #endregion
 
 private void Awake()

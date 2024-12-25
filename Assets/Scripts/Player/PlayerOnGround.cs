@@ -31,19 +31,19 @@ public class PlayerOnGround : PlayerState
             stateMachine.ChangeState(player.onAir);
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(player._fireballKey))
         {
             stateMachine.ChangeState(player.fireball);
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(player._landTileKey))
         {
             stateMachine.ChangeState(player.land);
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(player._airKey))
         {
-            stateMachine.ChangeState(player.air); // Assuming player.airState is initialized
+            stateMachine.ChangeState(player.air); 
         }
     }
 }

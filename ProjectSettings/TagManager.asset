@@ -11,6 +11,7 @@ TagManager:
   - Tornado
   - AirObstacle
   - Collectables
+  - Land
   layers:
   - Default
   - TransparentFX
