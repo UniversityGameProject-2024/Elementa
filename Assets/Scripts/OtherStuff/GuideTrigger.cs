@@ -1,14 +1,11 @@
 using UnityEngine;
 using TMPro;
-using System.Collections;
-using UnityEditor.Rendering.LookDev;
-
 
 public class GuideTrigger : MonoBehaviour
 {
     [SerializeField] private string guideMessage;        // Message to display
     [SerializeField] private TextMeshProUGUI guideText;  // Reference to TextMeshProUGUI
-    [SerializeField] private GameObject guideBackground; // Reference to the background GameObject
+    [SerializeField] private GameObject guideBackground; // Refernce to the background GameObject
 
 
     private void OnTriggerEnter2D(Collider2D collision)
