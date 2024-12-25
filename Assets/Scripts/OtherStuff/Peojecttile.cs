@@ -1,5 +1,6 @@
 using UnityEngine;
 using static UnityEditor.Experimental.GraphView.GraphView;
+using System.Collections;
 
 public class Projectile : MonoBehaviour
 {
@@ -9,24 +10,51 @@ public class Projectile : MonoBehaviour
     private void Start()
     {
         // Destroy the fireball after its lifetime expires
-        Destroy(gameObject, lifetime);
+        StartCoroutine(HandleLifetime());
+    }
+
+    private IEnumerator HandleLifetime()
+    {
+        // Wait for the projectile's lifetime to expire
+        yield return new WaitForSeconds(lifetime);
+
+        // Check if this is a Tornado projectile
+        if (CompareTag("Tornado"))
+        {
+            Player player = FindAnyObjectByType<Player>();
+            if (player != null && player.stateMachine.currentState is Air airState)
+            {
+                airState.returnPlayer();
+            }
+        }
+
+        // Destroy the projectile itself
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //// Check for collision with enemies
-        //if (collision.CompareTag("Enemy"))
-        //{
-        //    // Check if this is a fireball projectile (can add more checks for other projectiles if needed)
-        //    if (CompareTag("Fireball"))
-        //    {
-        //        // Destroy the enemy when hit by fireball
-        //        Destroy(collision.gameObject); // Destroy the enemy
-        //    }
+        // Check for collision with enemies
+        if (collision.CompareTag("Tree"))
+        {
+            // Check if this is a fireball projectile (can add more checks for other projectiles if needed)
+            if (CompareTag("Fireball"))
+            {
+                // Destroy the enemy when hit by fireball
+                Destroy(collision.gameObject); // Destroy the enemy
+            }
+            if (CompareTag("Tornado"))
+            {
+                Player player = FindAnyObjectByType<Player>();
+                if (player != null && player.stateMachine.currentState is Air airState)
+                {
+                    airState.returnPlayer();
+                }
 
-        //    // Destroy the projectile itself
-        //    Destroy(gameObject);
-        //}
+            }
+            // Destroy the projectile itself
+            Destroy(gameObject);
+        }
 
         if (collision.CompareTag("Ground"))
         {
