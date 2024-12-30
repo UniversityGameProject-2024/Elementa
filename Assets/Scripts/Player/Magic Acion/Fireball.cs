@@ -24,7 +24,7 @@ public class Fireball : PlayerState
             fireballSprite.flipX = player.viewDirection < 0;
         }
         // Transition back to the idle or move state after firing
-        stateMachine.ChangeState(player.idleState);
+        //stateMachine.ChangeState(player.idleState);
     }
 
     public override void Exit()
@@ -35,5 +35,10 @@ public class Fireball : PlayerState
     public override void Update()
     {
         base.Update();
+
+        if (animTrigger)
+        {
+            stateMachine.ChangeState(player.idleState);
+        }
     }
 }

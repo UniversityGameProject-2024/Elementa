@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6897933851287170735}
   - component: {fileID: 8823515804957742571}
   - component: {fileID: 2605766153444962558}
+  - component: {fileID: 7661177469838546606}
   m_Layer: 0
   m_Name: Fireball
   m_TagString: Fireball
@@ -79,12 +80,12 @@ SpriteRenderer:
   m_SortingLayerID: -323875797
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7212320954744636024, guid: bb164ac319acfff4e92de4c465a56b68, type: 3}
+  m_Sprite: {fileID: -1701408743, guid: bb9f3bf1b84101d4dbcac56a4049dbe6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.216, y: 1.288}
+  m_Size: {x: 4.3542523, y: 4.92}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -141,13 +142,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.385, y: 0.805}
-    newSize: {x: 2.216, y: 1.288}
+    oldSize: {x: 2.44739, y: 2.56}
+    newSize: {x: 4.3542523, y: 4.92}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.385, y: 0.805}
+  m_Size: {x: 2.49, y: 1.21}
   m_EdgeRadius: 0
 --- !u!50 &2605766153444962558
 Rigidbody2D:
@@ -176,3 +177,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &7661177469838546606
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201475662545107118}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 699ba54196a7a7e4786fee84440398f1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

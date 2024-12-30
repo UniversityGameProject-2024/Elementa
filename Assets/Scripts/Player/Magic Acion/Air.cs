@@ -69,6 +69,9 @@ public class Air : PlayerState
     public void returnPlayer()
     {
         controlledLandObject = null; // Stop controlling the object
-        stateMachine.ChangeState(player.idleState); // Return to idle state
+        if (animTrigger)
+        {
+            stateMachine.ChangeState(player.idleState);
+        }
     }
 }

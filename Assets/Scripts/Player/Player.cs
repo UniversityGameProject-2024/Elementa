@@ -72,9 +72,9 @@ public class Player : MonoBehaviour
         moveState = new PlayerMove(this, stateMachine, "run", null);
         onAir = new PlayerOnAir(this, stateMachine, "jump", null);
         jumpState = new PlayerJump(this, stateMachine, "jump", null);
-        fireball = new Fireball(this, stateMachine, "fireball", fireballPrefab);
-        land = new Land(this, stateMachine, "land", landPrefab);
-        air = new Air(this, stateMachine, "air", airPrefab);
+        fireball = new Fireball(this, stateMachine, "attack", fireballPrefab);
+        land = new Land(this, stateMachine, "attack", landPrefab);
+        air = new Air(this, stateMachine, "attack", airPrefab);
 
     }
 
@@ -138,5 +138,6 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void AnimTrigger() => stateMachine.currentState.IsAnimFinshed();
 }
 

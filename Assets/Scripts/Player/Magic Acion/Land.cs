@@ -23,8 +23,6 @@ public class Land : PlayerState
             currentLand = Object.Instantiate(gameObject, player.shootPoint.position, Quaternion.identity);
         }
 
-        // Transition back to idle or another state after creating the land object
-        stateMachine.ChangeState(player.idleState);
     }
 
     public override void Exit()
@@ -35,5 +33,9 @@ public class Land : PlayerState
     public override void Update()
     {
         base.Update();
+        if (animTrigger)
+        {
+            stateMachine.ChangeState(player.idleState);
+        }
     }
 }

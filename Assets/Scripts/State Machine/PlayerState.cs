@@ -8,6 +8,7 @@ public class PlayerState
     protected float horizontalInput;
     protected Rigidbody2D body;
     protected GameObject gameObject;
+    protected bool animTrigger;
 
     public PlayerState(Player player, StateMachine stateMachine, string animationName, GameObject gameObject)
     {
@@ -24,6 +25,8 @@ public class PlayerState
         player.animator.SetBool(animationName, true);
 
         body = player.body;
+        
+        animTrigger = false;
     }
 
     public virtual void Update()
@@ -37,5 +40,10 @@ public class PlayerState
     {
         Debug.Log("Player exit -" + animationName);
         player.animator.SetBool(animationName, false);
+    }
+
+    public virtual void IsAnimFinshed()
+    {
+        animTrigger = true;
     }
 }
