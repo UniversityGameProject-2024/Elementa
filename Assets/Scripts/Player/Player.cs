@@ -71,6 +71,7 @@ public class Player : MonoBehaviour
     [SerializeField] public Transform shootPoint;// The position from where the fireball spawns
 
     #endregion
+    private HealthManager healthManager;
 
     private void Awake()
     {
@@ -91,6 +92,12 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
         body = GetComponent<Rigidbody2D>();
         stateMachine.Initialize(idleState);
+        // Initialize health
+        healthManager = FindFirstObjectByType<HealthManager>();
+        if (healthManager != null)
+        {
+            healthManager.InitializeHealth(6); // Starts with 2 full hearts and 1 half heart
+        }
     }
 
     public void SetRunSpeed(float xSpeed, float ySpeed)

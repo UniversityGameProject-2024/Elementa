@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8264048422926625798}
   m_Layer: 0
   m_Name: AirSpell
-  m_TagString: Tornado
+  m_TagString: Air
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

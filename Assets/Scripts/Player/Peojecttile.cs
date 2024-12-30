@@ -18,7 +18,7 @@ public class Projectile : MonoBehaviour
         yield return new WaitForSeconds(lifetime);
 
         // Check if this is a Tornado projectile
-        if (CompareTag("Tornado"))
+        if (CompareTag("Air"))
         {
             destroyAirSpell();
         }
@@ -38,7 +38,7 @@ public class Projectile : MonoBehaviour
                 // Destroy the enemy when hit by fireball
                 Destroy(collision.gameObject); // Destroy the enemy
             }
-            if (CompareTag("Tornado"))
+            if (CompareTag("Air"))
             {
                 destroyAirSpell();
 
@@ -50,15 +50,16 @@ public class Projectile : MonoBehaviour
         if (collision.CompareTag("Ground"))
         {
             // Destroy the projectile itself
-            if (CompareTag("Tornado"))
+            if (CompareTag("Air"))
             {
                 destroyAirSpell();
             }
             Destroy(gameObject);
         }
+
         if (collision.CompareTag("Land"))
         {
-            if (CompareTag("Tornado"))
+            if (CompareTag("Air"))
             {
                 // Notify the player to control the land object
                 Player player = FindAnyObjectByType<Player>();
