@@ -45,5 +45,10 @@ public class PlayerOnGround : PlayerState
         {
             stateMachine.ChangeState(player.air);
         }
+        
+        if (Input.GetKeyDown(player._watershildKey))
+        {
+            stateMachine.ChangeState(player.water);
+        }
     }
 }

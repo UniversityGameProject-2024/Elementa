@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public Fireball fireball { get; private set; }
     public Land land { get; private set; }
     public Air air { get; private set; }
+    public Water water { get; private set; }
 
 
     #endregion
@@ -47,10 +48,15 @@ public class Player : MonoBehaviour
     [SerializeField] private KeyCode landTileKey = KeyCode.Alpha3;
     [Tooltip("Key for a air spell")]
     [SerializeField] private KeyCode airKey = KeyCode.Alpha4;
+    [Tooltip("Key for a Water Shield")]
+    [SerializeField] private KeyCode watershieldKey = KeyCode.Alpha1;
+
     public KeyCode _jumpKey => jumpKey;// Public property to provide read-only access
     public KeyCode _fireballKey => fireballKey;// Public property to provide read-only access
     public KeyCode _landTileKey => landTileKey;// Public property to provide read-only access
     public KeyCode _airKey => airKey;// Public property to provide read-only access
+    public KeyCode _watershildKey => watershieldKey;// Public property to provide read-only access
+
     #endregion
     public int viewDirection { get; private set; } = 1;
     private bool rightView = true;
@@ -61,6 +67,7 @@ public class Player : MonoBehaviour
     [SerializeField] public float fireballSpeed; // Speed of the fireball
     [SerializeField] public GameObject landPrefab;
     [SerializeField] public GameObject airPrefab;
+    [SerializeField] public GameObject waterPrefab;
     [SerializeField] public Transform shootPoint;// The position from where the fireball spawns
 
     #endregion
@@ -75,7 +82,7 @@ public class Player : MonoBehaviour
         fireball = new Fireball(this, stateMachine, "attack", fireballPrefab);
         land = new Land(this, stateMachine, "attack", landPrefab);
         air = new Air(this, stateMachine, "attack", airPrefab);
-
+        water = new Water(this, stateMachine, "attack", waterPrefab);
     }
 
     private void Start()
