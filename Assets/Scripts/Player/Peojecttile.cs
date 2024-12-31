@@ -32,12 +32,6 @@ public class Projectile : MonoBehaviour
         // Check for collision with enemies
         if (collision.CompareTag("Tree"))
         {
-            // Check if this is a fireball projectile (can add more checks for other projectiles if needed)
-            if (CompareTag("Fireball"))
-            {
-                // Destroy the enemy when hit by fireball
-                Destroy(collision.gameObject); // Destroy the enemy
-            }
             if (CompareTag("Air"))
             {
                 destroyAirSpell();
@@ -53,6 +47,16 @@ public class Projectile : MonoBehaviour
             if (CompareTag("Air"))
             {
                 destroyAirSpell();
+            }
+            Destroy(gameObject);
+        }
+
+        if (collision.CompareTag("Enemy"))
+        {
+            // Destroy the projectile itself
+            if (CompareTag("Fireball"))
+            {
+                Destroy(collision.gameObject); // Destroy the enemy
             }
             Destroy(gameObject);
         }

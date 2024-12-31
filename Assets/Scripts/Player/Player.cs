@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
 
-public class Player : MonoBehaviour
+public class Player : Entity
 {
     #region States
     public StateMachine stateMachine { get; private set; }
@@ -20,20 +20,11 @@ public class Player : MonoBehaviour
 
     #endregion
 
-    #region Compnents
-    public Animator animator { get; private set; }
-    public Rigidbody2D body { get; private set; }
-    #endregion
-
     #region SerializeField
     [Header("Player Settings")]
     [Tooltip("Player Speed")]
     [SerializeField] public float runSpeed = 5;
-
     [SerializeField] public float jumpImpulse;
-    [SerializeField] public Transform groundCheck;
-    [SerializeField] private float groundDist;
-    [SerializeField] private LayerMask groundLayer;
 
     [Header("Input Customization")]
     [Tooltip("Key for moving left")]
@@ -58,8 +49,6 @@ public class Player : MonoBehaviour
     public KeyCode _watershildKey => watershieldKey;// Public property to provide read-only access
 
     #endregion
-    public int viewDirection { get; private set; } = 1;
-    private bool rightView = true;
 
     #region Magic Prefabs
     [Header("Magic Actions")]
@@ -73,8 +62,9 @@ public class Player : MonoBehaviour
     #endregion
     private HealthManager healthManager;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         stateMachine = new StateMachine();
         idleState = new PlayerIdle(this, stateMachine, "idle", null);
         moveState = new PlayerMove(this, stateMachine, "run", null);
@@ -86,11 +76,9 @@ public class Player : MonoBehaviour
         water = new Water(this, stateMachine, "attack", waterPrefab);
     }
 
-    private void Start()
+    protected override void Start()
     {
-        //Grab ref for rigidbody and animator from object
-        animator = GetComponent<Animator>();
-        body = GetComponent<Rigidbody2D>();
+        base.Start();
         stateMachine.Initialize(idleState);
         // Initialize health
         healthManager = FindFirstObjectByType<HealthManager>();
@@ -114,44 +102,13 @@ public class Player : MonoBehaviour
         return 0f;
     }
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
         stateMachine.currentState.Update();
         FlipControl();
     }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawLine(groundCheck.position, new Vector2(groundCheck.position.x, groundCheck.position.y - groundDist));
-    }
-
-    public virtual bool IsGroundDetect() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundDist, groundLayer);
-
-    public void FlipPlayer()
-    {
-        viewDirection = viewDirection * (-1);
-        rightView = !rightView;
-        transform.Rotate(0, 180, 0);
-    }
-
-
-    public void FlipControl()
-    {
-        const float tolerance = 0.1f; // Add a small tolerance to prevent unnecessary flipping
-
-        if (Mathf.Abs(body.linearVelocity.x) > tolerance) // Only flip if velocity exceeds tolerance
-        {
-            if (body.linearVelocity.x > 0 && !rightView)
-            {
-                FlipPlayer();
-            }
-            else if (body.linearVelocity.x < 0 && rightView)
-            {
-                FlipPlayer();
-            }
-        }
-    }
-
     public void AnimTrigger() => stateMachine.currentState.IsAnimFinshed();
+
 }
 

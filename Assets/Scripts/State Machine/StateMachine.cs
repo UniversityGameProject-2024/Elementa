@@ -3,6 +3,7 @@ using UnityEngine;
 public class StateMachine
 {
     public PlayerState currentState { get; private set; }
+    public EnemyState enemyState { get; private set; }
 
     public void Initialize(PlayerState state)
     {
@@ -15,5 +16,18 @@ public class StateMachine
         currentState.Exit();
         currentState = state;
         currentState.Enter();
+    }
+
+    public void Initialize(EnemyState state)
+    {
+        enemyState = state;
+        enemyState.Enter();
+    }
+
+    public void ChangeState(EnemyState state)
+    {
+        enemyState.Exit();
+        enemyState = state;
+        enemyState.Enter();
     }
 }

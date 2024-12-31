@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="EnemyState" Collapsed="true">
+    <Position X="5.5" Y="3.5" Width="1.5" />
+    <InheritanceLine Type="System.Object" FixedFromPoint="true">
+      <Path>
+        <Point X="8" Y="2.812" />
+        <Point X="7.625" Y="2.812" />
+        <Point X="7.625" Y="3.781" />
+        <Point X="7" Y="3.781" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAACAAAAAAACAAAAAAQAEAAAAIgAAAAAAAAI=</HashCode>
+      <FileName>Assets\Scripts\State Machine\EnemyState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerState" Collapsed="true">
+    <Position X="10.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAACAAAAAAACAAAAAAQAEAAABIgAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\State Machine\PlayerState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StateMachine" Collapsed="true">
+    <Position X="8" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABQAAIAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Assets\Scripts\State Machine\StateMachine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TrollIdle" Collapsed="true">
+    <Position X="3.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAQAAAAAAAAAAAAAAAAAAAAAAAAEAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemies\Troll\Actions\TrollIdle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TrollMove" Collapsed="true">
+    <Position X="6.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAQAAAAAAAAAAAAAAAAAAAAAAAAEAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemies\Troll\Actions\TrollMove.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerJump" Collapsed="true">
+    <Position X="5.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAEAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Player\Actions\PlayerJump.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Air" Collapsed="true">
+    <Position X="7.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQAAAAABAAAAAAAAQAAAAAAAAAEAAAAIgAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Player\Magic Acion\Air.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fireball" Collapsed="true">
+    <Position X="10" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAEAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Player\Magic Acion\Fireball.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Land" Collapsed="true">
+    <Position X="12.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAEAAAAIAAAAAIAAAA=</HashCode>
+      <FileName>Assets\Scripts\Player\Magic Acion\Land.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Water" Collapsed="true">
+    <Position X="14.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAEAAAAMAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Player\Magic Acion\Water.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerOnAir" Collapsed="true">
+    <Position X="18.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAEAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Player\Player Positions\PlayerOnAir.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerOnGround" Collapsed="true">
+    <Position X="16.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAEAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Player\Player Positions\PlayerOnGround.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entity" Collapsed="true">
+    <Position X="13.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>hAQEAgACACAAAAAAAAAAAgAAAQABEAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Managers\Entity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerIdle" Collapsed="true">
+    <Position X="15.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAEAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Player\Actions\PlayerIdle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerMove" Collapsed="true">
+    <Position X="17.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAEAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Player\Actions\PlayerMove.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Enemy" Collapsed="true">
+    <Position X="12.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Enemies\Enemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player" Collapsed="true">
+    <Position X="14.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAYEUARAQCCBAMgAAwQBAAGAAAASLBgAMAAAAgIggEw=</HashCode>
+      <FileName>Assets\Scripts\Player\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GuideTrigger" Collapsed="true">
+    <Position X="16" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAECAAAAAAAAAAAAAABI=</HashCode>
+      <FileName>Assets\Scripts\Collectibles\GuideTrigger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityEngine.MonoBehaviour" Collapsed="true">
+    <Position X="15" Y="1.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="8" Y="2.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Troll" Collapsed="true">
+    <Position X="12.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Enemies\Troll\Troll.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CollectableCoin" Collapsed="true">
+    <Position X="18.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAEIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Collectibles\CollectableCoin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HealthManager" Collapsed="true">
+    <Position X="20.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAggAAgAAAAJAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Managers\HealthManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
