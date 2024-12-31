@@ -15,7 +15,7 @@ public class Entity : MonoBehaviour
     #endregion
     protected virtual void Awake()
     {
-        
+
     }
 
     protected virtual void Start()

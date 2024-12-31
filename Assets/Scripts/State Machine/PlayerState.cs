@@ -25,7 +25,7 @@ public class PlayerState
         player.animator.SetBool(animationName, true);
 
         body = player.body;
-        
+
         animTrigger = false;
     }
 

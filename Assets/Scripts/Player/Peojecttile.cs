@@ -53,6 +53,11 @@ public class Projectile : MonoBehaviour
 
         if (collision.CompareTag("Enemy"))
         {
+            if (CompareTag("Air"))
+            {
+                destroyAirSpell();
+
+            }
             // Destroy the projectile itself
             if (CompareTag("Fireball"))
             {
