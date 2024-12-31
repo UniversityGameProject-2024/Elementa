@@ -17,6 +17,10 @@
 
 ## קישור לדף עם הרכיבים דרמטיים
 [הרכיבים דרמטיים](https://github.com/UniversityGameProject-2024/Elementa/blob/main/dramatic-elements.md)
+### תרשים UML
+<a href="https://ibb.co/PMgZ7DT"><img src="https://i.ibb.co/kJXgRm3/Class-Diagram1.png" alt="Class-Diagram1" border="0"></a><br /><a target='_blank' href='https://imgbb.com/'></a><br />
+
+---
 ## חברי צוות
 ניקיטה אנוסוב
 
