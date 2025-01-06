@@ -22,8 +22,8 @@ public class EnemyState
     public virtual void Enter()
     {
         Debug.Log("troll enter -" + animationName);
-
         animTrigger = false;
+        body = enemy.body;
         enemy.animator.SetBool(animationName, true);
 
     }

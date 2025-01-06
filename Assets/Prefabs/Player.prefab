@@ -255,13 +255,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9c7a0f103f2be54c92052071f8cabb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 5
-  jumpImpulse: 6
   groundCheck: {fileID: 3879092263845558347}
+  wallCheck: {fileID: 6888248041349704192}
   groundDist: 0.16
+  wallDist: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
+  runSpeed: 5
+  jumpImpulse: 6
   moveLeftKey: 276
   moveRightKey: 275
   jumpKey: 32
@@ -319,7 +321,7 @@ Transform:
   m_GameObject: {fileID: 5060032355544328046}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.46, y: 0, z: 0}
+  m_LocalPosition: {x: 0.68, y: -0.66, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

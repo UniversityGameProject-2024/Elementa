@@ -1,11 +1,9 @@
 using UnityEngine;
 
-public class TrollIdle : EnemyState
+public class TrollIdle : TrollGroundPosition
 {
-    private Troll troll;
-    public TrollIdle(Enemy enemy, Troll troll, StateMachine stateMachine, string animationName, GameObject gameObject) : base(troll, stateMachine, animationName, gameObject)
+    public TrollIdle(Enemy enemy, Troll troll, StateMachine stateMachine, string animationName, GameObject gameObject) : base(enemy, troll, stateMachine, animationName, gameObject)
     {
-        this.troll = troll;
     }
 
     public override void Enter()

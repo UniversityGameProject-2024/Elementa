@@ -1,12 +1,10 @@
 using UnityEngine;
 using System.Collections;
 
-public class TrollMove : EnemyState
+public class TrollMove : TrollGroundPosition
 {
-    private Troll troll;
-    public TrollMove(Enemy enemy, Troll troll, StateMachine stateMachine, string animationName, GameObject gameObject) : base(enemy, stateMachine, animationName, gameObject)
+    public TrollMove(Enemy enemy, Troll troll, StateMachine stateMachine, string animationName, GameObject gameObject) : base(enemy, troll, stateMachine, animationName, gameObject)
     {
-        this.troll = troll;
     }
 
     public override void Enter()
