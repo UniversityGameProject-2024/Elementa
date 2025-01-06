@@ -3,7 +3,9 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     [SerializeField] protected Transform groundCheck;
+    [SerializeField] protected Transform wallCheck;
     [SerializeField] protected float groundDist;
+    [SerializeField] protected float wallDist;
     [SerializeField] protected LayerMask groundLayer;
     public int viewDirection { get; private set; } = 1;
     protected bool rightView = true;
@@ -31,6 +33,7 @@ public class Entity : MonoBehaviour
     }
 
     public virtual bool IsGroundDetect() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundDist, groundLayer);
+    public virtual bool IsWallDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * viewDirection, wallDist, groundLayer);
 
 
     protected virtual void OnDrawGizmos()
@@ -59,5 +62,9 @@ public class Entity : MonoBehaviour
                 FlipPlayer();
             }
         }
+    }
+    public void SetRunSpeed(float xSpeed, float ySpeed)
+    {
+        body.linearVelocity = new Vector2(xSpeed, ySpeed);
     }
 }
