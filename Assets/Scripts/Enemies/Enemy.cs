@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class Enemy : Entity
 {
+    [Header("Enemy control")]
+    public float enemySpeed;
+    public float idleTimner;
     public StateMachine stateMachine { get; private set; }
 
     protected override void Awake()

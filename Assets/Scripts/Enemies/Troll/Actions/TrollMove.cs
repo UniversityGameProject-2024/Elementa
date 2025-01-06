@@ -22,7 +22,7 @@ public class TrollMove : EnemyState
     public override void Update()
     {
         base.Update();
-        troll.SetRunSpeed(2 * troll.viewDirection, troll.body.linearVelocity.y);
+        troll.SetRunSpeed(troll.enemySpeed * troll.viewDirection, troll.body.linearVelocity.y);
 
         if (troll.IsWallDetected() || !troll.IsGroundDetect())
         {

@@ -11,7 +11,7 @@ public class TrollIdle : EnemyState
     public override void Enter()
     {
         base.Enter();
-        timer = 1f;
+        enemyTimer = troll.idleTimner;
     }
 
     public override void Exit()
@@ -22,7 +22,7 @@ public class TrollIdle : EnemyState
     public override void Update()
     {
         base.Update();
-        if (timer > 0f)
+        if (enemyTimer < 0f)
         {
             stateMachine.ChangeState(troll.trollMove);
         }

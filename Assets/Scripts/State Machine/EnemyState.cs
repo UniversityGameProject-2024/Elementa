@@ -9,7 +9,7 @@ public class EnemyState
     protected Rigidbody2D body;
     protected GameObject gameObject;
     protected bool animTrigger;
-    protected float timer;
+    protected float enemyTimer;
 
     public EnemyState(Enemy enemy, StateMachine stateMachine, string animationName, GameObject gameObject)
     {
@@ -31,7 +31,7 @@ public class EnemyState
     public virtual void Update()
     {
         Debug.Log("troll in -" + animationName);
-        timer -= Time.deltaTime;
+        enemyTimer -= Time.deltaTime;
     }
 
     public virtual void Exit()

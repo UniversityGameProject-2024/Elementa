@@ -10,7 +10,7 @@ public class Troll : Enemy
     {
         base.Awake();
         trollIdle = new TrollIdle(this, this, stateMachine, "idle", null);
-        trollMove = new TrollMove(this, this, stateMachine, "move", null);
+        trollMove = new TrollMove(this, this, stateMachine, "run", null);
     }
 
     protected override void Start()
