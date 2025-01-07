@@ -105,6 +105,14 @@ public class Player : Entity
         FlipControl();
     }
     public void AnimTrigger() => stateMachine.currentState.IsAnimFinshed();
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            // Stop player movement
+            GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
+        }
+    }
 
 }
 

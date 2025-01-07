@@ -4,8 +4,8 @@ using UnityEngine;
 public class TrollGroundPosition : EnemyState
 {
     protected Troll troll;
-    private Transform player;
-    private int moveDir;
+    protected Transform player;
+    protected int moveDir;
     public TrollGroundPosition(Enemy enemy, Troll troll, StateMachine stateMachine, string animationName, GameObject gameObject) : base(enemy, stateMachine, animationName, gameObject)
     {
         this.troll = troll;
@@ -14,7 +14,7 @@ public class TrollGroundPosition : EnemyState
     public override void Enter()
     {
         base.Enter();
-        //player = GameObject.Find("Player").transform;
+        player = GameObject.Find("Player").transform;
     }
 
     public override void Exit()
@@ -40,5 +40,9 @@ public class TrollGroundPosition : EnemyState
         //    moveDir -= 1;
         //}
         //troll.SetRunSpeed(troll.enemySpeed * moveDir, body.linearVelocity.y);
+        if (troll.DetectPlayer())
+        {
+            stateMachine.ChangeState(troll.trollAttacks);
+        }
     }
 }

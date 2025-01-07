@@ -38,5 +38,24 @@ public class HealthManager : MonoBehaviour
             }
         }
     }
+    private int currentHealth;
+
+    public int GetCurrentHealth()
+    {
+        return currentHealth;
+    }
+
+    public int GetMaxHealth()
+    {
+        return maxHealth;
+    }
+
+    public void ReduceHealth(int amount)
+    {
+        currentHealth -= amount;
+        if (currentHealth < 0) currentHealth = 0;
+        UpdateHealthUI(currentHealth, maxHealth);
+    }
+
 }
 

@@ -9,7 +9,8 @@ public class Enemy : Entity
     public float idleTimner;
     public float distance;
     public StateMachine stateMachine { get; private set; }
-
+    [Header("Attack control")]
+    public float attackDist;
     protected override void Awake()
     {
         base.Awake();

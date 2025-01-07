@@ -9,21 +9,25 @@ public class TrollAttacks : TrollGroundPosition
     public override void Enter()
     {
         base.Enter();
+
+    }
+
+    public override void Update()
+    {
+        base.Update();
+        if (player.position.x > troll.transform.position.x)
+        {
+            moveDir = 1;
+        }
+        else if (player.position.x < troll.transform.position.x)
+        {
+            moveDir -= 1;
+        }
+        troll.SetRunSpeed(1 * moveDir, body.linearVelocity.y);
     }
 
     public override void Exit()
     {
         base.Exit();
     }
-
-    public override void IsAnimFinshed()
-    {
-        base.IsAnimFinshed();
-    }
-
-    public override void Update()
-    {
-        base.Update();
-    }
-
 }
