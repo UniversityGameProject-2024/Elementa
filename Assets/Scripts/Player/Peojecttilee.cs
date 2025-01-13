@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Projectile : MonoBehaviour
+public class Projectilee : MonoBehaviour
 {
     [SerializeField] private float lifetime = 5f; // Time before the fireball disappears
     //[SerializeField] private int damage = 10; // Damage the fireball deals
