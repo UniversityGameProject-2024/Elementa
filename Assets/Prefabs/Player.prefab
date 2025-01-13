@@ -76,7 +76,6 @@ GameObject:
   - component: {fileID: 6149966515209188602}
   - component: {fileID: 9152139775508084964}
   - component: {fileID: 2353860948500695044}
-  - component: {fileID: 6815027717231551095}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -144,7 +143,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 327758561
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 4723107735738678597, guid: 0958baad8af8baf4f81f9576bec8904b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -277,25 +276,6 @@ MonoBehaviour:
   airPrefab: {fileID: 5564835743888163771, guid: e1437b9f90978154899e2f5e499ef809, type: 3}
   waterPrefab: {fileID: 9127474506260790771, guid: 602b396235b24174d876508ffb920275, type: 3}
   shootPoint: {fileID: 895859402684179457}
---- !u!114 &6815027717231551095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3701919224677437082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a2183b7acc5b794eb874e88a2ebf7dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heartImages:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  fullHeart: {fileID: 4432793351920879750, guid: d4e23442754c2fe4c956e82ff073e7bd, type: 3}
-  halfHeart: {fileID: 5642012044021194823, guid: d4e23442754c2fe4c956e82ff073e7bd, type: 3}
-  emptyHeart: {fileID: 8124259339964715380, guid: d4e23442754c2fe4c956e82ff073e7bd, type: 3}
 --- !u!1 &5060032355544328046
 GameObject:
   m_ObjectHideFlags: 0

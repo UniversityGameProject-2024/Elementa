@@ -8,7 +8,7 @@ public class HealthManager : MonoBehaviour
     [SerializeField] private Sprite halfHeart;   // Sprite for half heart
     [SerializeField] private Sprite emptyHeart;  // Sprite for empty heart
 
-    private int maxHealth;
+    [SerializeField] private int maxHealth;
 
     // Initializes the hearts with a specific amount of health
     public void InitializeHealth(int initialHealth)
