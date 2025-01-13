@@ -4,7 +4,7 @@ using System.Collections;
 public class Projectilee : MonoBehaviour
 {
     [SerializeField] private float lifetime = 5f; // Time before the fireball disappears
-    //[SerializeField] private int damage = 10; // Damage the fireball deals
+    [SerializeField] private int fireball_damage = 1; // Damage the fireball deals
 
     private void Start()
     {
@@ -45,7 +45,8 @@ public class Projectilee : MonoBehaviour
             // Destroy the projectile itself
             if (CompareTag("Fireball"))
             {
-                Destroy(collision.gameObject); // Destroy the enemy
+                collision.GetComponent<Health>().TakeDamage(fireball_damage);
+                //Destroy(collision.gameObject); // Destroy the enemy
             }
             Destroy(gameObject);
         }

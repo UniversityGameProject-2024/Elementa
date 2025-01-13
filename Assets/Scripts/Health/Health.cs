@@ -66,4 +66,8 @@ public class Health : MonoBehaviour
         Physics2D.IgnoreLayerCollision(6, 9, false);
         invulnerable = false;
     }
+    private void Deactivate()
+    {
+        gameObject.SetActive(false);
+    }
 }
