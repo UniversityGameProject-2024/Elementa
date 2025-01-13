@@ -70,6 +70,9 @@ TagManager:
   - name: Plants
     uniqueID: 1167473775
     locked: 0
+  - name: Collectables
+    uniqueID: 682442449
+    locked: 0
   m_RenderingLayers:
   - Default
   - Player
