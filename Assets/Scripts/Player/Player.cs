@@ -56,6 +56,11 @@ public class Player : Entity
     [SerializeField] private float airCooldown = 5f;
     [SerializeField] private float landCooldown = 4f;
     [SerializeField] private float waterCooldown = 6f;
+
+    [SerializeField] private SpellCooldownBar fireballCooldownBar;
+    [SerializeField] private SpellCooldownBar airCooldownBar;
+    [SerializeField] private SpellCooldownBar landCooldownBar;
+    [SerializeField] private SpellCooldownBar waterCooldownBar;
     private float fireballTimer = 0f;
     private float airTimer = 0f;
     private float landTimer = 0f;
@@ -126,15 +131,15 @@ public class Player : Entity
         // Update spell cooldown timers
         UpdateCooldownTimers();
     }
-    public bool CanCastFireball() => fireballTimer <= 0;
-    public bool CanCastAir() => airTimer <= 0;
-    public bool CanCastLand() => landTimer <= 0;
-    public bool CanCastWater() => waterTimer <= 0;
+    public bool CanCastFireball() => fireballCooldownBar.IsCooldownComplete();
+    public bool CanCastAir() => airCooldownBar.IsCooldownComplete();
+    public bool CanCastLand() => landCooldownBar.IsCooldownComplete();
+    public bool CanCastWater() => waterCooldownBar.IsCooldownComplete();
 
-    public void StartFireballCooldown() => fireballTimer = fireballCooldown;
-    public void StartAirCooldown() => airTimer = airCooldown;
-    public void StartLandCooldown() => landTimer = landCooldown;
-    public void StartWaterCooldown() => waterTimer = waterCooldown;
+    public void StartFireballCooldown() => fireballCooldownBar.StartCooldown(fireballCooldown);
+    public void StartAirCooldown() => airCooldownBar.StartCooldown(airCooldown);
+    public void StartLandCooldown() => landCooldownBar.StartCooldown(landCooldown);
+    public void StartWaterCooldown() => waterCooldownBar.StartCooldown(waterCooldown);
 
     public void AnimTrigger() => stateMachine.currentState.IsAnimFinshed();
     void OnCollisionEnter2D(Collision2D collision)
