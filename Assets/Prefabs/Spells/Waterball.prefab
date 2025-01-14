@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2002995025637002295}
   - component: {fileID: 2960526114550067748}
-  - component: {fileID: 3871851309512421556}
   - component: {fileID: 16648607487992032}
   - component: {fileID: 1631203420776823662}
   - component: {fileID: 4179709253784153195}
+  - component: {fileID: 5878073404109492192}
   m_Layer: 0
   m_Name: Waterball
   m_TagString: Water
@@ -91,19 +91,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3871851309512421556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9127474506260790771}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6afc1fa14f2a04686428973345b347, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifetime: 3
 --- !u!61 &16648607487992032
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -199,3 +186,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5878073404109492192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9127474506260790771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 028f9413c2f5ca243aa26d2474edc4dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

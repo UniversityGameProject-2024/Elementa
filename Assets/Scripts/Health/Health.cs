@@ -70,4 +70,10 @@ public class Health : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+    public void SetInvulnerability(bool state)
+    {
+        invulnerable = state;
+        Physics2D.IgnoreLayerCollision(6, 9, state);
+    }
+
 }

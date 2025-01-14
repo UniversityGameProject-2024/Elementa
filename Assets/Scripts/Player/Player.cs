@@ -48,6 +48,10 @@ public class Player : Entity
     public KeyCode _airKey => airKey;// Public property to provide read-only access
     public KeyCode _watershildKey => watershieldKey;// Public property to provide read-only access
 
+    [Header("Magic Action Durations")]
+    [SerializeField] private float waterShieldDuration = 2f; // Customizable shield duration in seconds
+    public float WaterShieldDuration => waterShieldDuration; // Public property to access the duration
+
     #endregion
 
     #region Magic Prefabs
@@ -73,7 +77,7 @@ public class Player : Entity
         fireball = new Fireball(this, stateMachine, "attack", fireballPrefab);
         land = new Land(this, stateMachine, "attack", landPrefab);
         air = new Air(this, stateMachine, "attack", airPrefab);
-        water = new Water(this, stateMachine, "attack", waterPrefab);
+        water = new Water(this, stateMachine, "attack", waterPrefab); // Initialize water state with the prefab
     }
 
     protected override void Start()

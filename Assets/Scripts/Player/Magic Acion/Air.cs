@@ -12,7 +12,6 @@ public class Air : PlayerState
     public override void Enter()
     {
         base.Enter();
-
         // Instantiate the air projectile
         if (gameObject != null)
         {
