@@ -26,12 +26,17 @@ public class Projectilee : MonoBehaviour
         // Destroy the projectile itself
         Destroy(gameObject);
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Check for collision with enemies
         if (collision.CompareTag("Tree") && collision.CompareTag("Ground"))
         {
+            Destroy(gameObject);
+        }
+
+        if (collision.CompareTag("breakable"))
+        {
+            Destroy(collision.gameObject);
             Destroy(gameObject);
         }
 

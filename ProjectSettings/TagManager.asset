@@ -12,6 +12,7 @@ TagManager:
   - Tree
   - Water
   - Air
+  - breakable
   layers:
   - Default
   - TransparentFX
