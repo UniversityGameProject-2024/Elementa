@@ -51,7 +51,15 @@ public class Player : Entity
     [Header("Magic Action Durations")]
     [SerializeField] private float waterShieldDuration = 2f; // Customizable shield duration in seconds
     public float WaterShieldDuration => waterShieldDuration; // Public property to access the duration
-
+    [Header("Spell Cooldowns")]
+    [SerializeField] private float fireballCooldown = 3f;
+    [SerializeField] private float airCooldown = 5f;
+    [SerializeField] private float landCooldown = 4f;
+    [SerializeField] private float waterCooldown = 6f;
+    private float fireballTimer = 0f;
+    private float airTimer = 0f;
+    private float landTimer = 0f;
+    private float waterTimer = 0f;
     #endregion
 
     #region Magic Prefabs
@@ -91,6 +99,14 @@ public class Player : Entity
             healthManager.InitializeHealth(6); // Starts with 2 full hearts and 1 half heart
         }
     }
+    private void UpdateCooldownTimers()
+    {
+        // Reduce cooldown timers over time
+        if (fireballTimer > 0) fireballTimer -= Time.deltaTime;
+        if (airTimer > 0) airTimer -= Time.deltaTime;
+        if (landTimer > 0) landTimer -= Time.deltaTime;
+        if (waterTimer > 0) waterTimer -= Time.deltaTime;
+    }
 
     public void Stand() => body.linearVelocity = new Vector2(0, 0);
 
@@ -107,7 +123,19 @@ public class Player : Entity
         base.Update();
         stateMachine.currentState.Update();
         FlipControl();
+        // Update spell cooldown timers
+        UpdateCooldownTimers();
     }
+    public bool CanCastFireball() => fireballTimer <= 0;
+    public bool CanCastAir() => airTimer <= 0;
+    public bool CanCastLand() => landTimer <= 0;
+    public bool CanCastWater() => waterTimer <= 0;
+
+    public void StartFireballCooldown() => fireballTimer = fireballCooldown;
+    public void StartAirCooldown() => airTimer = airCooldown;
+    public void StartLandCooldown() => landTimer = landCooldown;
+    public void StartWaterCooldown() => waterTimer = waterCooldown;
+
     public void AnimTrigger() => stateMachine.currentState.IsAnimFinshed();
     void OnCollisionEnter2D(Collision2D collision)
     {

@@ -11,7 +11,17 @@ public class Air : PlayerState
 
     public override void Enter()
     {
+        if (!player.CanCastAir())
+        {
+            stateMachine.ChangeState(player.idleState);
+            return;
+        }
+
         base.Enter();
+
+        // Start cooldown
+        player.StartAirCooldown();
+
         player.Stand();
         // Instantiate the air projectile
         if (gameObject != null)

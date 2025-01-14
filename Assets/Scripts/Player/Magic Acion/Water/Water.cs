@@ -14,7 +14,16 @@ public class Water : PlayerState
 
     public override void Enter()
     {
+        if (!player.CanCastWater())
+        {
+            stateMachine.ChangeState(player.idleState);
+            return;
+        }
+
         base.Enter();
+
+        // Start cooldown
+        player.StartWaterCooldown();
 
         // Stop the player's movement
         player.Stand();

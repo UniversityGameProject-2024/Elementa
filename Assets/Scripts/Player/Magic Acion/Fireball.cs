@@ -8,7 +8,17 @@ public class Fireball : PlayerState
 
     public override void Enter()
     {
+        if (!player.CanCastFireball())
+        {
+            stateMachine.ChangeState(player.idleState);
+            return;
+        }
+
         base.Enter();
+
+        // Start cooldown
+        player.StartFireballCooldown();
+
         // Instantiate the fireball at the fire point
         GameObject fireballInstance = Object.Instantiate(gameObject, player.shootPoint.position, Quaternion.identity);
 
@@ -23,9 +33,8 @@ public class Fireball : PlayerState
         {
             fireballSprite.flipX = player.viewDirection < 0;
         }
-        // Transition back to the idle or move state after firing
-        //stateMachine.ChangeState(player.idleState);
     }
+
 
     public override void Exit()
     {

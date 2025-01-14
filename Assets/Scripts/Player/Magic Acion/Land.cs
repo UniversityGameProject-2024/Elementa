@@ -9,7 +9,16 @@ public class Land : PlayerState
 
     public override void Enter()
     {
+        if (!player.CanCastLand())
+        {
+            stateMachine.ChangeState(player.idleState);
+            return;
+        }
+
         base.Enter();
+
+        // Start cooldown
+        player.StartLandCooldown();
 
         // Check if a land object already exists
         if (currentLand != null)
