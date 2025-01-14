@@ -12,10 +12,14 @@ public class Air : PlayerState
     public override void Enter()
     {
         base.Enter();
+        player.Stand();
         // Instantiate the air projectile
         if (gameObject != null)
         {
             currentAirProjectile = Object.Instantiate(gameObject, player.shootPoint.position, Quaternion.identity);
+            SpriteRenderer fireballSprite = currentAirProjectile.GetComponent<SpriteRenderer>();
+            fireballSprite.flipX = player.viewDirection < 0;
+
             Rigidbody2D airRb = currentAirProjectile.GetComponent<Rigidbody2D>();
             if (airRb != null)
             {
@@ -31,7 +35,7 @@ public class Air : PlayerState
     public override void Update()
     {
         base.Update();
-
+        player.Stand();
         if (controlledLandObject != null)
         {
             // Allow the player to control the land object in all directions
