@@ -45,6 +45,7 @@ public class Projectilee : MonoBehaviour
             if (CompareTag("Air"))
             {
                 destroyAirSpell();
+                Destroy(gameObject);
 
             }
             // Destroy the projectile itself
@@ -52,8 +53,9 @@ public class Projectilee : MonoBehaviour
             {
                 collision.GetComponent<Health>().TakeDamage(fireball_damage);
                 //Destroy(collision.gameObject); // Destroy the enemy
+                Destroy(gameObject);
             }
-            Destroy(gameObject);
+
         }
 
         if (collision.CompareTag("Land"))
