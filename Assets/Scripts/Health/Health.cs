@@ -8,6 +8,7 @@ public class Health : MonoBehaviour
     public float currentHealth { get; private set; }
     private Animator anim;
     private bool dead;
+    private Vector3 checkpointPosition;
 
     [Header("iFrames")]
     [SerializeField] private float iFramesDuration;
@@ -23,6 +24,8 @@ public class Health : MonoBehaviour
         currentHealth = startingHealth;
         anim = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
+        checkpointPosition = transform.position; // Set the initial checkpoint to the starting position
+
     }
     public void TakeDamage(float _damage)
     {
@@ -45,6 +48,8 @@ public class Health : MonoBehaviour
                     component.enabled = false;
 
                 dead = true;
+                Invoke(nameof(Respawn), 2.0f); // Add a delay before respawning
+
             }
         }
     }
@@ -75,5 +80,23 @@ public class Health : MonoBehaviour
         invulnerable = state;
         Physics2D.IgnoreLayerCollision(6, 9, state);
     }
+    //Respawn
+    public void SetCheckpoint(Vector3 position)
+    {
+        checkpointPosition = position;
+    }
 
+    public void Respawn()
+    {
+        transform.position = checkpointPosition; // Move the player to the checkpoint
+        currentHealth = startingHealth; // Restore health
+        anim.ResetTrigger("die");
+        anim.Play("Idle");
+        dead = false;
+
+        foreach (Behaviour component in components)
+            component.enabled = true;
+
+        StartCoroutine(Invunerability()); // Apply invulnerability after respawn
+    }
 }

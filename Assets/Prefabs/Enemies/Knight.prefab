@@ -196,7 +196,7 @@ MonoBehaviour:
   iFramesDuration: 0
   numberOfFlashes: 0
   components:
-  - {fileID: 3871830794471952270}
+  - {fileID: 5169645043049243863}
 --- !u!114 &3707725724564569242
 MonoBehaviour:
   m_ObjectHideFlags: 0

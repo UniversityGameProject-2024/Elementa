@@ -5,6 +5,7 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private Transform player; // Reference to the player object
     [SerializeField] private Vector3 offset; // Offset between camera and player
     [SerializeField] private float smoothSpeed = 0.125f; // Speed of smooth camera follow
+    private float currentPosX;
 
     private void LateUpdate()
     {

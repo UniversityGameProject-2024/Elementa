@@ -77,7 +77,6 @@ public class Player : Entity
     [SerializeField] public Transform shootPoint;// The position from where the fireball spawns
 
     #endregion
-    private HealthManager healthManager;
 
     protected override void Awake()
     {
@@ -97,12 +96,6 @@ public class Player : Entity
     {
         base.Start();
         stateMachine.Initialize(idleState);
-        // Initialize health
-        healthManager = FindFirstObjectByType<HealthManager>();
-        if (healthManager != null)
-        {
-            healthManager.InitializeHealth(6); // Starts with 2 full hearts and 1 half heart
-        }
     }
     private void UpdateCooldownTimers()
     {

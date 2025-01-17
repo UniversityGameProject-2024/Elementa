@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6064488778667154501}
   - component: {fileID: 1864008032265455708}
   - component: {fileID: 8231862880043345882}
+  - component: {fileID: 1321576179103799533}
   m_Layer: 0
   m_Name: GuideObject
   m_TagString: Untagged
@@ -151,6 +152,18 @@ MonoBehaviour:
   guideMessage: Hello world
   guideText: {fileID: 6507000634214359879}
   guideBackground: {fileID: 6301230397039826201}
+--- !u!114 &1321576179103799533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661869177999075198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 138b6bacf5d0b3447b408b24a8055934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4596918480180005901
 GameObject:
   m_ObjectHideFlags: 0
