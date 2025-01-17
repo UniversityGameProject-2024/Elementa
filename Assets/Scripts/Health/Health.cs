@@ -93,6 +93,7 @@ public class Health : MonoBehaviour
         anim.ResetTrigger("die");
         anim.Play("Idle");
         dead = false;
+        Debug.Log("Pkayer Respawn");
 
         foreach (Behaviour component in components)
             component.enabled = true;

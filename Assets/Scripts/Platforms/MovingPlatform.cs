@@ -54,5 +54,21 @@ public class MovingPlatform : MonoBehaviour
             Gizmos.DrawSphere(endPoint.position, 0.1f);
         }
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Check if the player is on the platform
+        if (collision.collider.CompareTag("Player"))
+        {
+            collision.collider.transform.SetParent(transform); // Attach player to platform
+        }
+    }
 
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        // Detach the player when they leave the platform
+        if (collision.collider.CompareTag("Player"))
+        {
+            collision.collider.transform.SetParent(null); // Detach player from platform
+        }
+    }
 }
