@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
     private Animator anim;
     private bool dead;
     private Vector3 checkpointPosition;
+    [SerializeField] private bool isPlayer;
 
     [Header("iFrames")]
     [SerializeField] private float iFramesDuration;
@@ -18,6 +19,9 @@ public class Health : MonoBehaviour
     [Header("Components")]
     [SerializeField] private Behaviour[] components;
     private bool invulnerable;
+    [Header("Audio")]
+    [SerializeField] private AudioClip deathSound;
+    [SerializeField] private AudioClip hurthSound;
 
     private void Awake()
     {
@@ -36,6 +40,7 @@ public class Health : MonoBehaviour
         {
             anim.SetTrigger("hurt");
             StartCoroutine(Invunerability());
+            SoundManager.instance.PlaySound(hurthSound);
         }
         else
         {
@@ -48,8 +53,11 @@ public class Health : MonoBehaviour
                     component.enabled = false;
 
                 dead = true;
-                Invoke(nameof(Respawn), 2.0f); // Add a delay before respawning
-
+                SoundManager.instance.PlaySound(deathSound);
+                if (isPlayer) 
+                {
+                    Invoke(nameof(Respawn), 2.0f); // Add a delay before respawning
+                }
             }
         }
     }

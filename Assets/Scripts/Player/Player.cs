@@ -41,6 +41,12 @@ public class Player : Entity
     [SerializeField] private KeyCode airKey = KeyCode.Alpha4;
     [Tooltip("Key for a Water Shield")]
     [SerializeField] private KeyCode watershieldKey = KeyCode.Alpha1;
+    [Header("Audio")]
+    [SerializeField] public AudioClip fireballSound;
+    [SerializeField] public AudioClip waterSound;
+    [SerializeField] public AudioClip airSound;
+    [SerializeField] public AudioClip landlSound;
+    [SerializeField] public AudioClip jumpSound;
 
     public KeyCode _jumpKey => jumpKey;// Public property to provide read-only access
     public KeyCode _fireballKey => fireballKey;// Public property to provide read-only access

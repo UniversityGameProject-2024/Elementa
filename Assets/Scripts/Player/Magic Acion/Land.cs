@@ -19,6 +19,8 @@ public class Land : PlayerState
 
         // Start cooldown
         player.StartLandCooldown();
+        SoundManager.instance.PlaySound(player.landlSound);
+
 
         // Check if a land object already exists
         if (currentLand != null)

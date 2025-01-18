@@ -23,6 +23,10 @@ public class PlayerOnGround : PlayerState
 
         if (Input.GetKeyDown(player._jumpKey) && player.IsGroundDetect())
         {
+            if (player.IsGroundDetect())
+            {
+                SoundManager.instance.PlaySound(player.jumpSound);
+            }
             stateMachine.ChangeState(player.jumpState);
         }
 

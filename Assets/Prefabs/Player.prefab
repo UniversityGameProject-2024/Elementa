@@ -271,6 +271,18 @@ MonoBehaviour:
   landTileKey: 51
   airKey: 52
   watershieldKey: 49
+  fireballSound: {fileID: 0}
+  swordSound: {fileID: 0}
+  jumpSound: {fileID: 0}
+  waterShieldDuration: 2
+  fireballCooldown: 3
+  airCooldown: 5
+  landCooldown: 4
+  waterCooldown: 6
+  fireballCooldownBar: {fileID: 0}
+  airCooldownBar: {fileID: 0}
+  landCooldownBar: {fileID: 0}
+  waterCooldownBar: {fileID: 0}
   fireballPrefab: {fileID: 201475662545107118, guid: 0a6c4a6f6cf775242a8c6bdfefc2310d, type: 3}
   fireballSpeed: 5
   landPrefab: {fileID: 3154039592035121520, guid: 25c8d892c5017b34a887276369f8077a, type: 3}
@@ -293,6 +305,7 @@ MonoBehaviour:
   iFramesDuration: 2
   numberOfFlashes: 3
   components: []
+  deathSound: {fileID: 8300000, guid: b0e6a0905835cfb4683579b3d0bcee9f, type: 3}
 --- !u!1 &5060032355544328046
 GameObject:
   m_ObjectHideFlags: 0

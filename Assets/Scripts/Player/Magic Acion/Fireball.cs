@@ -18,6 +18,7 @@ public class Fireball : PlayerState
 
         // Start cooldown
         player.StartFireballCooldown();
+        SoundManager.instance.PlaySound(player.fireballSound);
 
         // Instantiate the fireball at the fire point
         GameObject fireballInstance = Object.Instantiate(gameObject, player.shootPoint.position, Quaternion.identity);

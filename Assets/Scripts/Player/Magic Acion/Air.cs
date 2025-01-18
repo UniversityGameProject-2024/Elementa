@@ -21,6 +21,7 @@ public class Air : PlayerState
 
         // Start cooldown
         player.StartAirCooldown();
+        SoundManager.instance.PlaySound(player.airSound);
 
         player.Stand();
         // Instantiate the air projectile

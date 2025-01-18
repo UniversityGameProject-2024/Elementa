@@ -24,6 +24,8 @@ public class Water : PlayerState
 
         // Start cooldown
         player.StartWaterCooldown();
+        SoundManager.instance.PlaySound(player.waterSound);
+
 
         // Stop the player's movement
         player.Stand();
