@@ -2,6 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
+using TMPro;
 
 public class Player : Entity
 {
@@ -79,6 +80,7 @@ public class Player : Entity
     [SerializeField] public float fireballSpeed; // Speed of the fireball
     [SerializeField] public GameObject landPrefab;
     [SerializeField] public GameObject airPrefab;
+    [SerializeField] private TextMeshProUGUI airGuideText;
     [SerializeField] public GameObject waterPrefab;
     [SerializeField] public Transform shootPoint;// The position from where the fireball spawns
 
@@ -94,7 +96,7 @@ public class Player : Entity
         jumpState = new PlayerJump(this, stateMachine, "jump", null);
         fireball = new Fireball(this, stateMachine, "attack", fireballPrefab);
         land = new Land(this, stateMachine, "attack", landPrefab);
-        air = new Air(this, stateMachine, "attack", airPrefab);
+        air = new Air(this, stateMachine, "attack", airPrefab, airGuideText);
         water = new Water(this, stateMachine, "attack", waterPrefab); // Initialize water state with the prefab
     }
 

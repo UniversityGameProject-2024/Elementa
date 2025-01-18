@@ -1,12 +1,16 @@
+using TMPro;
 using UnityEngine;
 
 public class Air : PlayerState
 {
     private GameObject currentAirProjectile;
     private GameObject controlledLandObject;
-
-    public Air(Player player, StateMachine stateMachine, string animationName, GameObject gameObject) : base(player, stateMachine, animationName, gameObject)
+    // Reference to the TextMeshPro text object
+    private TextMeshProUGUI spellText;
+    public Air(Player player, StateMachine stateMachine, string animationName, GameObject gameObject, TextMeshProUGUI text)
+        : base(player, stateMachine, animationName, gameObject)
     {
+        spellText = text; // Initialize the TextMeshPro reference
     }
 
     public override void Enter()
@@ -36,6 +40,7 @@ public class Air : PlayerState
             {
                 airRb.linearVelocity = new Vector2(player.fireballSpeed * player.viewDirection, 0);
             }
+
         }
 
         // Immediately allow the player to move after casting the air spell
@@ -49,6 +54,11 @@ public class Air : PlayerState
         player.Stand();
         if (controlledLandObject != null)
         {
+            // Show the spell text
+            if (spellText != null)
+            {
+                spellText.gameObject.SetActive(true);
+            }
             // Allow the player to control the land object in all directions
             Vector2 moveInput = new Vector2(
                 Input.GetAxisRaw("Horizontal"), // Get input for left/right movement
@@ -64,6 +74,11 @@ public class Air : PlayerState
                 returnPlayer();
             }
         }
+        // Hide the spell text when spacebar is pressed
+        if (Input.GetKeyDown(KeyCode.Space) && spellText != null)
+        {
+            spellText.gameObject.SetActive(false);
+        }
     }
 
     public void ControlLand(GameObject landObject)
@@ -77,6 +92,11 @@ public class Air : PlayerState
         if (currentAirProjectile != null)
         {
             Object.Destroy(currentAirProjectile); // Destroy the projectile when exiting the state
+        }
+        // Ensure the text is hidden when exiting the state
+        if (spellText != null)
+        {
+            spellText.gameObject.SetActive(false);
         }
     }
 
