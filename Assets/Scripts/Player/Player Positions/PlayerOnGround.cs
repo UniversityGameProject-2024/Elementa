@@ -21,7 +21,7 @@ public class PlayerOnGround : PlayerState
     {
         base.Update();
 
-        if (Input.GetKeyDown(player._jumpKey) && player.IsGroundDetect())
+        if (player.IsJumpKeyPressed() && player.IsGroundDetect())
         {
             if (player.IsGroundDetect())
             {

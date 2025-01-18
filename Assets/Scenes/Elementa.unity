@@ -8159,8 +8159,32 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1147478021}
     - target: {fileID: 2353860948500695044, guid: d25b6b18f75208146b1919c150c7e436, type: 3}
+      propertyPath: jumpKeys.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2353860948500695044, guid: d25b6b18f75208146b1919c150c7e436, type: 3}
       propertyPath: waterShieldDuration
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2353860948500695044, guid: d25b6b18f75208146b1919c150c7e436, type: 3}
+      propertyPath: 'jumpKeys.Array.data[1]'
+      value: 119
+      objectReference: {fileID: 0}
+    - target: {fileID: 2353860948500695044, guid: d25b6b18f75208146b1919c150c7e436, type: 3}
+      propertyPath: moveLeftKeys.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2353860948500695044, guid: d25b6b18f75208146b1919c150c7e436, type: 3}
+      propertyPath: moveRightKeys.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2353860948500695044, guid: d25b6b18f75208146b1919c150c7e436, type: 3}
+      propertyPath: 'moveLeftKeys.Array.data[1]'
+      value: 97
+      objectReference: {fileID: 0}
+    - target: {fileID: 2353860948500695044, guid: d25b6b18f75208146b1919c150c7e436, type: 3}
+      propertyPath: 'moveRightKeys.Array.data[1]'
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3701919224677437082, guid: d25b6b18f75208146b1919c150c7e436, type: 3}
       propertyPath: m_Name

@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
 using TMPro;
+using System.Collections.Generic;
 
 public class Player : Entity
 {
@@ -28,12 +29,17 @@ public class Player : Entity
     [SerializeField] public float jumpImpulse;
 
     [Header("Input Customization")]
-    [Tooltip("Key for moving left")]
-    [SerializeField] private KeyCode moveLeftKey = KeyCode.LeftArrow;
-    [Tooltip("Key for moving right")]
-    [SerializeField] private KeyCode moveRightKey = KeyCode.RightArrow;
-    [Tooltip("Key for jump")]
-    [SerializeField] private KeyCode jumpKey = KeyCode.Space;
+    [SerializeField]
+    [Tooltip("Keys for moving left")]
+    private List<KeyCode> moveLeftKeys = new List<KeyCode> { KeyCode.LeftArrow };
+
+    [SerializeField]
+    [Tooltip("Keys for moving right")]
+    private List<KeyCode> moveRightKeys = new List<KeyCode> { KeyCode.RightArrow };
+
+    [SerializeField]
+    [Tooltip("Keys for jumping")]
+    private List<KeyCode> jumpKeys = new List<KeyCode> { KeyCode.Space };
     [Tooltip("Key for Shooting a fireball")]
     [SerializeField] private KeyCode fireballKey = KeyCode.Alpha2;
     [Tooltip("Key for creating a land tile")]
@@ -49,7 +55,7 @@ public class Player : Entity
     [SerializeField] public AudioClip landlSound;
     [SerializeField] public AudioClip jumpSound;
 
-    public KeyCode _jumpKey => jumpKey;// Public property to provide read-only access
+    //public KeyCode _jumpKey => jumpKey;// Public property to provide read-only access
     public KeyCode _fireballKey => fireballKey;// Public property to provide read-only access
     public KeyCode _landTileKey => landTileKey;// Public property to provide read-only access
     public KeyCode _airKey => airKey;// Public property to provide read-only access
@@ -119,11 +125,30 @@ public class Player : Entity
 
     public float GetHorizontalInput()
     {
-        if (Input.GetKey(moveLeftKey)) return -1f;
-        if (Input.GetKey(moveRightKey)) return 1f;
+        // Check if any key in moveLeftKeys is pressed
+        foreach (var key in moveLeftKeys)
+        {
+            if (Input.GetKey(key)) return -1f;
+        }
+
+        // Check if any key in moveRightKeys is pressed
+        foreach (var key in moveRightKeys)
+        {
+            if (Input.GetKey(key)) return 1f;
+        }
+
         return 0f;
     }
+    public bool IsJumpKeyPressed()
+    {
+        // Check if any key in jumpKeys is pressed
+        foreach (var key in jumpKeys)
+        {
+            if (Input.GetKeyDown(key)) return true;
+        }
 
+        return false;
+    }
     protected override void Update()
     {
         base.Update();
