@@ -77,7 +77,6 @@ public class Air : PlayerState
         // Hide the spell text when spacebar is pressed
         if (Input.GetKeyDown(KeyCode.Space) && spellText != null)
         {
-            spellText.gameObject.SetActive(false);
             returnPlayer();
         }
     }
@@ -103,6 +102,8 @@ public class Air : PlayerState
 
     public void returnPlayer()
     {
+        spellText.gameObject.SetActive(false);
+
         controlledLandObject = null; // Stop controlling the object
         if (animTrigger)
         {

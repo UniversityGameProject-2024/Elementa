@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using TMPro;
 
 public class Health : MonoBehaviour
 {
@@ -23,12 +24,21 @@ public class Health : MonoBehaviour
     [SerializeField] private AudioClip deathSound;
     [SerializeField] private AudioClip hurthSound;
 
+    // Reference to the player
+    private Player player;
+
     private void Awake()
     {
         currentHealth = startingHealth;
         anim = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
         checkpointPosition = transform.position; // Set the initial checkpoint to the starting position
+
+        // Get the Player component if this is the player object
+        if (isPlayer)
+        {
+            player = GetComponent<Player>();
+        }
 
     }
     public void TakeDamage(float _damage)
@@ -38,7 +48,15 @@ public class Health : MonoBehaviour
 
         if (currentHealth > 0)
         {
-            anim.SetTrigger("hurt");
+            if (isPlayer)
+            {
+                // Check if the player is in the Air state
+                if (player.stateMachine.currentState is Air airState)
+                {
+                    airState.returnPlayer();
+                }
+            }
+                anim.SetTrigger("hurt");
             StartCoroutine(Invunerability());
             SoundManager.instance.PlaySound(hurthSound);
         }
@@ -56,6 +74,11 @@ public class Health : MonoBehaviour
                 SoundManager.instance.PlaySound(deathSound);
                 if (isPlayer) 
                 {
+                    // Check if the player is in the Air state
+                    if (player.stateMachine.currentState is Air airState)
+                    {
+                        airState.returnPlayer();
+                    }
                     Invoke(nameof(Respawn), 2.0f); // Add a delay before respawning
                 }
             }

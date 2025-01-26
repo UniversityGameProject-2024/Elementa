@@ -8181,6 +8181,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 7032b674afae88641a56611faacd1d2d, type: 3}
     - target: {fileID: 6032641084548162020, guid: d25b6b18f75208146b1919c150c7e436, type: 3}
+      propertyPath: airGuideText
+      value: 
+      objectReference: {fileID: 530323184}
+    - target: {fileID: 6032641084548162020, guid: d25b6b18f75208146b1919c150c7e436, type: 3}
       propertyPath: components.Array.size
       value: 1
       objectReference: {fileID: 0}
