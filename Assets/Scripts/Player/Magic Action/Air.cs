@@ -52,13 +52,13 @@ public class Air : PlayerState
     {
         base.Update();
         player.Stand();
+        // Show the spell text
+        if (spellText != null)
+        {
+            spellText.gameObject.SetActive(true);
+        }
         if (controlledLandObject != null)
         {
-            // Show the spell text
-            if (spellText != null)
-            {
-                spellText.gameObject.SetActive(true);
-            }
             // Allow the player to control the land object in all directions
             Vector2 moveInput = new Vector2(
                 Input.GetAxisRaw("Horizontal"), // Get input for left/right movement
@@ -78,6 +78,7 @@ public class Air : PlayerState
         if (Input.GetKeyDown(KeyCode.Space) && spellText != null)
         {
             spellText.gameObject.SetActive(false);
+            returnPlayer();
         }
     }
 
