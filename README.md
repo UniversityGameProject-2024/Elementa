@@ -29,4 +29,24 @@
 
 יעקב אלקובי
 
+---
+
+## תודות
+
+במסגרת הפרויקט נעזרנו בבינה מלאכותית gpt וגם בסירטונים שונים של הדרכות ביוטיוב.
+
+הפלייליסט שעזר הכי הרבה - [קישור](https://www.youtube.com/playlist?list=PLgOEwFbvGm5o8hayFB6skAfa8Z-mw4dPV)
+
+ספרייטים של דמות ראשית - [קישור](https://luizmelo.itch.io/wizard-pack)
+
+עזרה ביצירת טריילר למשחק - [קישור](https://www.animaker.com/)
+
+ספרייטים של אויב - [קישור](https://assetstore.unity.com/packages/2d/characters/knight-sprite-sheet-free-93897)
+
+מוזיקת רקע - [קישור](https://patrickdearteaga.com/musica-libre-derechos-gratis/)
+
+אריחי משחק - [קישור](https://assetstore.unity.com/packages/2d/environments/2d-pixel-art-platformer-biome-american-forest-255694?srsltid=AfmBOopvnN31UqGFwfje4HQolAZgU3HAnojhgPfAKk2oq8YQTpkN6bzJ)
+
+רקע של המשחק - [קישור](https://assetstore.unity.com/packages/2d/environments/free-2d-cartoon-parallax-background-205812?srsltid=AfmBOorhPhkw7tC_hc21GixV5Q0fmY97Ghj_QfYqDomXd5AnV4uqtbxf)
+
 
