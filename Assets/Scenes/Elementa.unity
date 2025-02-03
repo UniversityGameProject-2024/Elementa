@@ -33026,8 +33026,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 15, y: 0}
-  m_SizeDelta: {x: 400, y: 50}
+  m_AnchoredPosition: {x: 50, y: 0}
+  m_SizeDelta: {x: 600, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &485870072
 MonoBehaviour:
@@ -33051,8 +33051,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4d6a86fd03bda8349a983a8bce811826, type: 2}
+  m_sharedMaterial: {fileID: -8636357949693944044, guid: 4d6a86fd03bda8349a983a8bce811826, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -33076,10 +33076,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -33353,8 +33353,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 113.6}
-  m_SizeDelta: {x: 400, y: 50}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 600, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &530323184
 MonoBehaviour:
@@ -33378,7 +33378,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Press [Space] To release
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4d6a86fd03bda8349a983a8bce811826, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -33386,7 +33386,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294112243
-  m_fontColor: {r: 0.9528302, g: 0.9521492, b: 0.9483357, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -33444,7 +33444,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &530323185
@@ -33630,11 +33630,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5820387784776502569, guid: d25b6b18f75208146b1919c150c7e436, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5820387784776502569, guid: d25b6b18f75208146b1919c150c7e436, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.31
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5820387784776502569, guid: d25b6b18f75208146b1919c150c7e436, type: 3}
       propertyPath: m_LocalPosition.z
@@ -39593,8 +39593,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8231862880043345882, guid: ff23c0956d3442545a5391cc92b4c8e9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231862880043345882, guid: ff23c0956d3442545a5391cc92b4c8e9, type: 3}
       propertyPath: guideMessage
-      value: 
+      value: 'Check what is behind the bushes.  '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -39617,25 +39621,41 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 800
       objectReference: {fileID: 0}
+    - target: {fileID: 1608912806015403071, guid: ff23c0956d3442545a5391cc92b4c8e9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608912806015403071, guid: ff23c0956d3442545a5391cc92b4c8e9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 1661869177999075198, guid: ff23c0956d3442545a5391cc92b4c8e9, type: 3}
       propertyPath: m_Name
       value: GuideObject
       objectReference: {fileID: 0}
     - target: {fileID: 3038013834274596935, guid: ff23c0956d3442545a5391cc92b4c8e9, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3038013834274596935, guid: ff23c0956d3442545a5391cc92b4c8e9, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3038013834274596935, guid: ff23c0956d3442545a5391cc92b4c8e9, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1112
+      value: -40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3038013834274596935, guid: ff23c0956d3442545a5391cc92b4c8e9, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3038013834274596935, guid: ff23c0956d3442545a5391cc92b4c8e9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3038013834274596935, guid: ff23c0956d3442545a5391cc92b4c8e9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 250
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 4547609176960323722, guid: ff23c0956d3442545a5391cc92b4c8e9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -39679,18 +39699,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6507000634214359879, guid: ff23c0956d3442545a5391cc92b4c8e9, type: 3}
       propertyPath: m_text
-      value: "You can now use the Wind ability! \nTo move a land tile, cast an Air
-        spell (press 4) and aim it at a land tile. Once the spell touches the tile,
-        you can move it using the arrow keys (Left/Right/Up/Down). During this time,
-        the player cannot move. \nIf you want to cancel or exit this mode, press
-        Space."
+      value: 'Wind ability is unlocked!
+
+        Press 4 to cast an Air spell on
+        a land tile. When it hits, use the arrow keys to move the tile. Your character
+        won''t move during this.
+
+        Press Space to cancel.'
       objectReference: {fileID: 0}
     - target: {fileID: 8231862880043345882, guid: ff23c0956d3442545a5391cc92b4c8e9, type: 3}
       propertyPath: guideMessage
-      value: You can now use the Wind ability! To move a land tile, cast an Air spell
-        (press 4) and aim it at a land tile. Once the spell touches the tile, you
-        can move it using the arrow keys (Left/Right/Up/Down). During this time,
-        the player cannot move. If you want to cancel or exit this mode, press Space.
+      value: Wind ability is unlocked! Press 4 to cast an Air spell on a land tile.
+        When it hits, use the arrow keys to move the tile. Your character won't move
+        during this. Press Space to cancel.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -41028,6 +41049,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1026014524}
     m_Modifications:
+    - target: {fileID: 1608912806015403071, guid: ff23c0956d3442545a5391cc92b4c8e9, type: 3}
+      propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608912806015403071, guid: ff23c0956d3442545a5391cc92b4c8e9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608912806015403071, guid: ff23c0956d3442545a5391cc92b4c8e9, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1661869177999075198, guid: ff23c0956d3442545a5391cc92b4c8e9, type: 3}
       propertyPath: m_Name
       value: GuideObject
@@ -85786,7 +85819,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 4
-      m_TileSpriteIndex: 8
+      m_TileSpriteIndex: 11
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -85916,7 +85949,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 8
-      m_TileSpriteIndex: 2
+      m_TileSpriteIndex: 8
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -85963,8 +85996,8 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 48
     m_Data: {fileID: -1766307359, guid: 5fe5454ec8605de43809133b020d1b69, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 1348864781, guid: 5fe5454ec8605de43809133b020d1b69, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 56
     m_Data: {fileID: -1727392612, guid: 5fe5454ec8605de43809133b020d1b69, type: 3}
   - m_RefCount: 3
@@ -85976,13 +86009,13 @@ Tilemap:
   - m_RefCount: 2
     m_Data: {fileID: 1121040729, guid: 5fe5454ec8605de43809133b020d1b69, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 747311438, guid: 5fe5454ec8605de43809133b020d1b69, type: 3}
+    m_Data: {fileID: 1348864781, guid: 5fe5454ec8605de43809133b020d1b69, type: 3}
   - m_RefCount: 7
     m_Data: {fileID: -1724452651, guid: 5fe5454ec8605de43809133b020d1b69, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: -337102267, guid: 5fe5454ec8605de43809133b020d1b69, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 747311438, guid: 5fe5454ec8605de43809133b020d1b69, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 118
     m_Data:
