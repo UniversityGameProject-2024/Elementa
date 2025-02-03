@@ -12,6 +12,12 @@
 ## לינק למשחק(במסגרת המטלה של הקורס)
 [קישור לitch.io](https://wnikita.itch.io/elementa-pilot)
 
+## טריילר
+
+[יוטיוב](https://www.youtube.com/watch?v=vp92cAT074c&ab_channel=Nikita)
+
+---
+
 ## קישור לדף עם הרכיבים הרשמיים
 [הרכיבים הרשמיים](https://github.com/UniversityGameProject-2024/Elementa/wiki)
 
