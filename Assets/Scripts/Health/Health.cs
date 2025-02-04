@@ -4,7 +4,7 @@ using TMPro;
 
 public class Health : MonoBehaviour
 {
-    [Header ("Health")]
+    [Header("Health")]
     [SerializeField] private float startingHealth;
     public float currentHealth { get; private set; }
     private Animator anim;
@@ -56,7 +56,7 @@ public class Health : MonoBehaviour
                     airState.returnPlayer();
                 }
             }
-                anim.SetTrigger("hurt");
+            anim.SetTrigger("hurt");
             StartCoroutine(Invunerability());
             SoundManager.instance.PlaySound(hurthSound);
         }
@@ -72,7 +72,7 @@ public class Health : MonoBehaviour
 
                 dead = true;
                 SoundManager.instance.PlaySound(deathSound);
-                if (isPlayer) 
+                if (isPlayer)
                 {
                     // Check if the player is in the Air state
                     if (player.stateMachine.currentState is Air airState)
