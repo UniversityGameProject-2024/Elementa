@@ -32,12 +32,18 @@ public class PauseMenu : MonoBehaviour
         // Toggle pause/resume when pressing "P".
         if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
         {
-            if (GameIsPaused)
-                Resume();
-            else
-                Pause();
+            TogglePauseGame();
         }
     }
+
+    public void TogglePauseGame()
+    {
+        if (GameIsPaused)
+            Resume();
+        else
+            Pause();
+    }
+
 
     // Resumes the game.
     public void Resume()
