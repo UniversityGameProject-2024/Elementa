@@ -6,5 +6,8 @@ public class Menu : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(1);
     }
-
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadSceneAsync(0);
+    }
 }
