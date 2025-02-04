@@ -17,7 +17,7 @@ public class EndTrigger : MonoBehaviour
             SoundManager.instance.PlaySound(sound);
             int currentCoins = ManagerCoin.Instance.GetCoinCount();
             // Show the guide panel with the message
-            guideText.text = guideMessage + "\nCoins Collected:\n " + currentCoins + " / 12" ;
+            guideText.text = guideMessage + "\nCoins Collected:\n " + currentCoins + " / 12";
             guideBackground.SetActive(true);
             guideText.gameObject.SetActive(true);
         }
