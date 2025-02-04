@@ -127,6 +127,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1644942484}
     m_Modifications:
+    - target: {fileID: 7049030055478057574, guid: 38b72acc0f0e4da40b9f7c1049ecc660, type: 3}
+      propertyPath: healthValue
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7441459016957956703, guid: 38b72acc0f0e4da40b9f7c1049ecc660, type: 3}
       propertyPath: m_LocalPosition.x
       value: 197.21725
@@ -186,7 +190,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7049030055478057574, guid: 38b72acc0f0e4da40b9f7c1049ecc660, type: 3}
       propertyPath: healthValue
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7441459016957956703, guid: 38b72acc0f0e4da40b9f7c1049ecc660, type: 3}
       propertyPath: m_LocalPosition.x
@@ -77495,6 +77499,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 3ba638ee854cdfb4c803cc33e6b92dab, type: 3}
     - target: {fileID: 2353860948500695044, guid: d25b6b18f75208146b1919c150c7e436, type: 3}
+      propertyPath: runSpeed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2353860948500695044, guid: d25b6b18f75208146b1919c150c7e436, type: 3}
       propertyPath: jumpSound
       value: 
       objectReference: {fileID: 8300000, guid: 184636e05d284be42ad7489666d4a931, type: 3}
@@ -77674,6 +77682,10 @@ PrefabInstance:
       propertyPath: airGuideText
       value: 
       objectReference: {fileID: 530323184}
+    - target: {fileID: 6032641084548162020, guid: d25b6b18f75208146b1919c150c7e436, type: 3}
+      propertyPath: startingHealth
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6032641084548162020, guid: d25b6b18f75208146b1919c150c7e436, type: 3}
       propertyPath: components.Array.size
       value: 1
@@ -78740,7 +78752,7 @@ MonoBehaviour:
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.3
+  m_FillAmount: 0.4
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -87102,6 +87114,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1644942484}
     m_Modifications:
+    - target: {fileID: 7049030055478057574, guid: 38b72acc0f0e4da40b9f7c1049ecc660, type: 3}
+      propertyPath: healthValue
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7441459016957956703, guid: 38b72acc0f0e4da40b9f7c1049ecc660, type: 3}
       propertyPath: m_LocalPosition.x
       value: 100.67321
@@ -88663,7 +88679,7 @@ MonoBehaviour:
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.3
+  m_FillAmount: 0.4
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -142557,6 +142573,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1644942484}
     m_Modifications:
+    - target: {fileID: 7049030055478057574, guid: 38b72acc0f0e4da40b9f7c1049ecc660, type: 3}
+      propertyPath: healthValue
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7441459016957956703, guid: 38b72acc0f0e4da40b9f7c1049ecc660, type: 3}
       propertyPath: m_LocalPosition.x
       value: 194.12599
@@ -145743,6 +145763,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1644942484}
     m_Modifications:
+    - target: {fileID: 7049030055478057574, guid: 38b72acc0f0e4da40b9f7c1049ecc660, type: 3}
+      propertyPath: healthValue
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7441459016957956703, guid: 38b72acc0f0e4da40b9f7c1049ecc660, type: 3}
       propertyPath: m_LocalPosition.x
       value: 60
