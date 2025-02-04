@@ -55,6 +55,8 @@ public class Player : Entity
     [SerializeField] public AudioClip landlSound;
     [SerializeField] public AudioClip jumpSound;
 
+    [SerializeField] private Camera mainCamera; // Reference to the main camera
+
     //public KeyCode _jumpKey => jumpKey;// Public property to provide read-only access
     public KeyCode _fireballKey => fireballKey;// Public property to provide read-only access
     public KeyCode _landTileKey => landTileKey;// Public property to provide read-only access
@@ -91,6 +93,18 @@ public class Player : Entity
     [SerializeField] public Transform shootPoint;// The position from where the fireball spawns
 
     #endregion
+    [SerializeField] private LineRenderer lineRenderer; // Reference to the LineRenderer
+
+    [Header("Line Settings")]
+    [SerializeField] public float maxControlDistance = 5f; // Maximum distance the player can move the land object
+    [SerializeField] private float lineStartWidth = 0.15f; // Start width of the line
+    [SerializeField] private float lineEndWidth = 0.1f;    // End width of the line
+    [SerializeField] private Color lineStartColor = Color.cyan; // Start color
+    [SerializeField] private Color lineEndColor = Color.blue;   // End color
+
+
+    // Store the default camera size
+    private float defaultCameraSize;
 
     protected override void Awake()
     {
@@ -104,6 +118,25 @@ public class Player : Entity
         land = new Land(this, stateMachine, "attack", landPrefab);
         air = new Air(this, stateMachine, "attack", airPrefab, airGuideText);
         water = new Water(this, stateMachine, "attack", waterPrefab); // Initialize water state with the prefab
+        if (mainCamera == null)
+            mainCamera = Camera.main;
+
+        defaultCameraSize = mainCamera.orthographicSize;
+
+        // Ensure LineRenderer is attached
+        if (lineRenderer == null)
+        {
+            lineRenderer = gameObject.AddComponent<LineRenderer>();
+        }
+
+        // Apply settings from Inspector
+        lineRenderer.startWidth = lineStartWidth;
+        lineRenderer.endWidth = lineEndWidth;
+        lineRenderer.startColor = lineStartColor;
+        lineRenderer.endColor = lineEndColor;
+        lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+        lineRenderer.positionCount = 2;
+        lineRenderer.enabled = false; // Initially hidden
     }
 
     protected override void Start()
@@ -177,5 +210,43 @@ public class Player : Entity
         }
     }
 
+
+    // Function to change the camera size
+    public void ChangeCameraSize(float newSize)
+    {
+        if (mainCamera != null)
+        {
+            mainCamera.orthographicSize = newSize;
+        }
+    }
+
+    // Function to reset camera size to default
+    public void ResetCameraSize()
+    {
+        if (mainCamera != null)
+        {
+            mainCamera.orthographicSize = defaultCameraSize;
+        }
+    }
+
+    // Function to update the line position
+    public void UpdateLine(Vector3 targetPosition)
+    {
+        if (lineRenderer != null)
+        {
+            lineRenderer.enabled = true;
+            lineRenderer.SetPosition(0, transform.position);
+            lineRenderer.SetPosition(1, targetPosition);
+        }
+    }
+
+    // Function to hide the line
+    public void HideLine()
+    {
+        if (lineRenderer != null)
+        {
+            lineRenderer.enabled = false;
+        }
+    }
 }
 

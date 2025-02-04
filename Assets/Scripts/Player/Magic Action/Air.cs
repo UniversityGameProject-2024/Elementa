@@ -28,9 +28,11 @@ public class Air : PlayerState
         SoundManager.instance.PlaySound(player.airSound);
 
         player.Stand();
+
         // Instantiate the air projectile
         if (gameObject != null)
         {
+
             currentAirProjectile = Object.Instantiate(gameObject, player.shootPoint.position, Quaternion.identity);
             SpriteRenderer fireballSprite = currentAirProjectile.GetComponent<SpriteRenderer>();
             fireballSprite.flipX = player.viewDirection < 0;
@@ -59,14 +61,29 @@ public class Air : PlayerState
         }
         if (controlledLandObject != null)
         {
+            // Increase camera size when Air spell is cast
+            player.ChangeCameraSize(7.5f); // Adjust this value based on preference
+            // Get current player position
+            Vector3 playerPosition = player.transform.position;
             // Allow the player to control the land object in all directions
             Vector2 moveInput = new Vector2(
                 Input.GetAxisRaw("Horizontal"), // Get input for left/right movement
                 Input.GetAxisRaw("Vertical")    // Get input for up/down movement
             );
 
-            // Move the land object based on player input
-            controlledLandObject.transform.Translate(moveInput * player.runSpeed * Time.deltaTime);
+            // Calculate the new position based on player input
+            Vector3 newPosition = controlledLandObject.transform.position + (Vector3)(moveInput * player.runSpeed * Time.deltaTime);
+
+            // Check if the new position is within the max distance from the player
+            float distanceToPlayer = Vector3.Distance(playerPosition, newPosition);
+            if (distanceToPlayer <= player.maxControlDistance)
+            {
+                // Allow movement only within the set range
+                controlledLandObject.transform.position = newPosition;
+            }
+
+            // Update the line between the player and controlled land object
+            player.UpdateLine(controlledLandObject.transform.position);
 
             // Drop the land object when a specific key is pressed (e.g., space)
             if (Input.GetKeyDown(KeyCode.Space))
@@ -89,6 +106,10 @@ public class Air : PlayerState
     public override void Exit()
     {
         base.Exit();
+
+        // Reset the camera view when Air spell ends
+        player.ResetCameraSize();
+
         if (currentAirProjectile != null)
         {
             Object.Destroy(currentAirProjectile); // Destroy the projectile when exiting the state
@@ -105,6 +126,9 @@ public class Air : PlayerState
         spellText.gameObject.SetActive(false);
 
         controlledLandObject = null; // Stop controlling the object
+
+        player.HideLine(); // Hide the line when control ends
+
         if (animTrigger)
         {
             stateMachine.ChangeState(player.idleState);
