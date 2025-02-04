@@ -45,6 +45,11 @@ public class ManagerCoin : MonoBehaviour
             StartCoroutine(HideTextAfterDelay(CoinShowTextTime));
         }
     }
+    public int GetCoinCount()
+    {
+        return coinCount;
+    }
+
 
     private System.Collections.IEnumerator HideTextAfterDelay(float delay)
     {
