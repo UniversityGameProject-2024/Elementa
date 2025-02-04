@@ -105,6 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifetime: 1
   fireball_damage: 1
+  breakableDestroySound: {fileID: 8300000, guid: 42ae6ac0530544f41a2f8f01813f43a0, type: 3}
 --- !u!61 &8823515804957742571
 BoxCollider2D:
   m_ObjectHideFlags: 0

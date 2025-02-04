@@ -5,6 +5,7 @@ public class Projectilee : MonoBehaviour
 {
     [SerializeField] private float lifetime = 5f; // Time before the fireball disappears
     [SerializeField] private int fireball_damage = 1; // Damage the fireball deals
+    [SerializeField] private AudioClip breakableDestroySound; // Sound effect for destroying breakables
 
     private void Start()
     {
@@ -36,8 +37,13 @@ public class Projectilee : MonoBehaviour
 
         if (collision.CompareTag("breakable"))
         {
-            Destroy(collision.gameObject);
             Destroy(gameObject);
+            // Play destruction sound
+            if (breakableDestroySound != null)
+            {
+                SoundManager.instance.PlaySound(breakableDestroySound);
+            }
+            Destroy(collision.gameObject);
         }
 
         if (collision.CompareTag("Enemy"))
@@ -73,7 +79,6 @@ public class Projectilee : MonoBehaviour
             }
         }
     }
-
 
     private void destroyAirSpell()
     {
